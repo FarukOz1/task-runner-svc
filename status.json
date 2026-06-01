@@ -1,0 +1,14 @@
+{
+  "last_updated": "2026-09-07T00:00:00Z",
+  "run_started_at": "2026-09-07T00:00:00Z",
+  "poll_interval_seconds": 15,
+  "poll_count": 0,
+  "dry_run": true,
+  "watchlist": [
+    {"match_id": "15l316xw14qu9smdp59e4epsk", "home": "Botafogo RJ", "away": "Palmeiras", "active": false},
+    {"match_id": "ccpfjtmwynfe9w3nko8q4xus4", "home": "Başakşehir", "away": "Galatasaray", "active": false}
+  ],
+  "recent_log": [
+    {"time": "2026-09-07T00:00:00Z", "level": "info", "message": "Panel ilk kez yayınlandı, ilk gerçek veri bir sonraki GitHub Actions çalıştırmasında gelecek."}
+  ]
+}

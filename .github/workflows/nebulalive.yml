@@ -34,10 +34,10 @@ jobs:
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
         run: python cloud_runner.py
 
-      - name: Durumu (dedup DB) commit'le
+      - name: Durumu (dedup DB + panel verisi) commit'le
         run: |
           git config user.name "nebulalive-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add nebulalive.db
+          git add nebulalive.db status.json
           git diff --staged --quiet || git commit -m "state güncelle [skip ci]"
           git push

@@ -28,8 +28,8 @@ class WatchedMatch:
 # NOT: Aşağıdaki kayıtlar SADECE pipeline'ı uçtan uca test etmek için eklendi.
 # Gerçek/canlı izleme için bunları kendi gerçek watchlist'inle değiştir.
 WATCHLIST: List[WatchedMatch] = [
-    # Canlı test maçı (0-0 başladı, gol geldiğinde gerçek zamanlı görmek için).
-    WatchedMatch(match_id="15l316xw14qu9smdp59e4epsk", home="Botafogo RJ", away="Palmeiras"),
+    # Bitti (0-0, hiç gol olmadı - sistem doğru şekilde hiçbir event üretmedi).
+    WatchedMatch(match_id="15l316xw14qu9smdp59e4epsk", home="Botafogo RJ", away="Palmeiras", active=False),
     # Bitmiş test maçı (5 gol içeriyor, dedup zaten devrede - dry-run'da bir şey basmaz).
     WatchedMatch(match_id="ccpfjtmwynfe9w3nko8q4xus4", home="Başakşehir", away="Galatasaray", active=False),
 ]

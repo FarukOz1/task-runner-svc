@@ -94,6 +94,8 @@
     margin-top: 2px;
   }
 
+  .header-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
   .badges {
     display: flex;
     align-items: center;
@@ -132,6 +134,22 @@
     0%, 100% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.35; transform: scale(0.75); }
   }
+
+  .icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    color: var(--text-1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: border-color .15s, color .15s;
+  }
+  .icon-btn:hover { border-color: var(--accent); color: var(--text-0); }
 
   .stats {
     display: grid;
@@ -179,6 +197,7 @@
     border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
+    margin-bottom: 20px;
   }
 
   .panel h2 {
@@ -228,7 +247,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 60%;
+    max-width: 50%;
   }
 
   .pill {
@@ -290,6 +309,101 @@
     font-size: 13px;
   }
   .error-msg { color: var(--err); }
+
+  /* ---- Ayarlar / Yönetim paneli ---- */
+  #settings { display: none; }
+  #settings.open { display: block; }
+
+  .settings-body { padding: 18px; display: flex; flex-direction: column; gap: 22px; }
+
+  .field-row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  input[type="text"], input[type="password"] {
+    flex: 1;
+    min-width: 140px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 12px;
+    color: var(--text-0);
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+  }
+  input::placeholder { color: var(--text-2); }
+  input:focus { border-color: var(--accent); }
+
+  button.btn {
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.03);
+    color: var(--text-0);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: border-color .15s, background .15s, opacity .15s;
+  }
+  button.btn:hover { border-color: var(--accent); }
+  button.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  button.btn.primary { background: var(--accent); border-color: var(--accent); color: #1a0a33; }
+  button.btn.primary:hover { background: #b8a3fb; }
+
+  button.btn.ghost { background: transparent; }
+
+  button.btn.danger { background: var(--err); border-color: var(--err); color: #2a0a10; }
+  button.btn.danger:hover { background: #ff9aa8; }
+
+  button.btn.small { padding: 6px 11px; font-size: 11px; }
+
+  .hint { font-size: 11.5px; color: var(--text-2); line-height: 1.6; }
+  .hint a { color: var(--accent-2); }
+
+  .token-status {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+  }
+  .token-status .tok { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-1); }
+
+  .section-label {
+    font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    color: var(--text-1); margin-bottom: 10px;
+  }
+
+  .wl-row {
+    display: flex; align-items: center; gap: 10px;
+    background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 10px;
+    padding: 10px 12px; margin-bottom: 8px; flex-wrap: wrap;
+  }
+  .wl-row .info { flex: 1; min-width: 140px; }
+  .wl-row .info .n { font-weight: 600; font-size: 13.5px; }
+  .wl-row .info .id { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--text-2); }
+  .wl-row .actions { display: flex; gap: 6px; }
+
+  .add-form { display: grid; grid-template-columns: 1fr 1fr 1.6fr auto; gap: 8px; margin-top: 12px; }
+  @media (max-width: 640px) { .add-form { grid-template-columns: 1fr; } }
+
+  .danger-zone {
+    border: 1px solid rgba(251,113,133,0.35);
+    background: rgba(251,113,133,0.05);
+    border-radius: 12px;
+    padding: 16px;
+  }
+  .danger-zone.live-armed {
+    border-color: rgba(244,114,182,0.5);
+    background: rgba(244,114,182,0.08);
+  }
+
+  .confirm-steps { margin-top: 14px; display: flex; flex-direction: column; gap: 12px; }
+  .confirm-steps label { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-1); }
+  .confirm-steps input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--goal); }
+
+  .status-msg { font-size: 12.5px; margin-top: 10px; min-height: 16px; }
+  .status-msg.ok { color: var(--live); }
+  .status-msg.err { color: var(--err); }
+  .status-msg.pending { color: var(--text-2); }
 </style>
 </head>
 <body>
@@ -302,12 +416,58 @@
           <span class="sub">Gol Otomasyonu — Kontrol Paneli</span>
         </div>
       </div>
-      <div class="badges" id="badges">
-        <span class="badge live"><span class="dot"></span>YÜKLENİYOR</span>
+      <div class="header-right">
+        <div class="badges" id="badges">
+          <span class="badge live"><span class="dot"></span>YÜKLENİYOR</span>
+        </div>
+        <button class="icon-btn" id="settings-toggle" title="Ayarlar">⚙</button>
       </div>
     </header>
 
     <div class="stats" id="stats"></div>
+
+    <!-- Ayarlar / Yönetim -->
+    <div class="panel" id="settings">
+      <h2>Ayarlar &amp; Yönetim</h2>
+      <div class="settings-body">
+
+        <div>
+          <div class="section-label">GitHub Erişim Anahtarı</div>
+          <div id="token-area"></div>
+          <div class="hint">
+            Yönetim işlemleri (maç ekle/çıkar, canlı yayın aç/kapat, manuel tetikleme) için
+            <code>repo</code> ve <code>workflow</code> izinli bir GitHub Personal Access Token gerekir.
+            Token sadece bu tarayıcıda (localStorage) saklanır, hiçbir sunucuya gönderilmez —
+            sadece doğrudan GitHub API'sine gider.
+            <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">Token oluştur →</a>
+          </div>
+        </div>
+
+        <div id="managed-area" style="display:none;">
+          <div class="section-label">Watchlist Yönetimi</div>
+          <div id="wl-editor"></div>
+          <div class="add-form">
+            <input type="text" id="add-home" placeholder="Ev sahibi takım" />
+            <input type="text" id="add-away" placeholder="Deplasman takım" />
+            <input type="text" id="add-matchid" placeholder="Maçkolik matchId" />
+            <button class="btn primary" id="add-match-btn">+ Ekle</button>
+          </div>
+          <div class="status-msg" id="wl-status"></div>
+        </div>
+
+        <div id="trigger-area" style="display:none;">
+          <div class="section-label">Manuel Kontrol</div>
+          <button class="btn" id="trigger-btn">▶ Kontrolü Şimdi Çalıştır</button>
+          <div class="status-msg" id="trigger-status"></div>
+        </div>
+
+        <div id="live-area" style="display:none;">
+          <div class="section-label">Canlı Paylaşım</div>
+          <div class="danger-zone" id="danger-zone"></div>
+        </div>
+
+      </div>
+    </div>
 
     <div class="grid">
       <div class="panel">
@@ -332,24 +492,33 @@
   </div>
 
 <script>
-  const STATUS_URL = "https://raw.githubusercontent.com/FarukOz1/task-runner-svc/main/status.json";
+  const OWNER = "FarukOz1";
+  const REPO = "task-runner-svc";
+  const GH_API = `https://api.github.com/repos/${OWNER}/${REPO}`;
+  const CONFIG_PATH = "runtime_config.json";
+  const WORKFLOW_FILE = "nebulalive.yml";
+  const STATUS_URL = `https://raw.githubusercontent.com/${OWNER}/${REPO}/main/status.json`;
   const REFRESH_MS = 20000;
+  const TOKEN_KEY = "nebula_gh_token";
 
+  // ---------- yardımcılar ----------
   function timeAgo(iso) {
     const diff = Math.max(0, (Date.now() - new Date(iso).getTime()) / 1000);
     if (diff < 60) return Math.floor(diff) + " sn önce";
     if (diff < 3600) return Math.floor(diff / 60) + " dk önce";
     return Math.floor(diff / 3600) + " sa önce";
   }
-
   function fmtTime(iso) {
-    const d = new Date(iso);
-    return d.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    return new Date(iso).toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
   }
-
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
   }
+  function utf8ToB64(str) { return btoa(unescape(encodeURIComponent(str))); }
+  function b64ToUtf8(str) { return decodeURIComponent(escape(atob(str))); }
+
+  // ---------- durum paneli (herkese açık, token gerekmez) ----------
+  let lastStatus = null;
 
   function renderBadges(status, stale) {
     const el = document.getElementById('badges');
@@ -419,10 +588,12 @@
       const res = await fetch(STATUS_URL + '?t=' + Date.now(), { cache: 'no-store' });
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const status = await res.json();
+      lastStatus = status;
       renderBadges(status, false);
       renderStats(status);
       renderMatches(status);
       renderLog(status);
+      renderDangerZone();
     } catch (e) {
       renderBadges({}, true);
       document.getElementById('matches').innerHTML = `<div class="error-msg">Veri alınamadı: ${escapeHtml(e.message)}</div>`;
@@ -430,6 +601,275 @@
     }
   }
 
+  // ---------- GitHub API (token gerektiren yazma işlemleri) ----------
+  function getToken() { return localStorage.getItem(TOKEN_KEY) || ''; }
+  function setToken(t) { localStorage.setItem(TOKEN_KEY, t); }
+  function clearToken() { localStorage.removeItem(TOKEN_KEY); }
+
+  async function ghFetch(path, opts = {}) {
+    const token = getToken();
+    const headers = Object.assign({
+      'Accept': 'application/vnd.github+json',
+      'Authorization': 'Bearer ' + token,
+    }, opts.headers || {});
+    const res = await fetch(GH_API + path, Object.assign({}, opts, { headers }));
+    if (!res.ok) {
+      let msg = '';
+      try { msg = (await res.json()).message; } catch (_) {}
+      throw new Error(`GitHub API ${res.status}${msg ? ': ' + msg : ''}`);
+    }
+    return res.status === 204 ? null : res.json();
+  }
+
+  async function getRuntimeConfig() {
+    const data = await ghFetch(`/contents/${CONFIG_PATH}`);
+    return { content: JSON.parse(b64ToUtf8(data.content)), sha: data.sha };
+  }
+
+  async function putRuntimeConfig(newContent, sha, message) {
+    return ghFetch(`/contents/${CONFIG_PATH}`, {
+      method: 'PUT',
+      body: JSON.stringify({
+        message,
+        content: utf8ToB64(JSON.stringify(newContent, null, 2) + "\n"),
+        sha,
+        branch: 'main',
+      }),
+    });
+  }
+
+  async function triggerWorkflow() {
+    return ghFetch(`/actions/workflows/${WORKFLOW_FILE}/dispatches`, {
+      method: 'POST',
+      body: JSON.stringify({ ref: 'main' }),
+    });
+  }
+
+  // ---------- Ayarlar paneli UI ----------
+  function renderTokenArea() {
+    const el = document.getElementById('token-area');
+    const token = getToken();
+    if (token) {
+      const masked = token.slice(0, 7) + '••••••••••••••••••••';
+      el.innerHTML = `
+        <div class="token-status">
+          <span class="tok">${escapeHtml(masked)}</span>
+          <button class="btn small ghost" id="clear-token-btn">Kaldır</button>
+        </div>`;
+      document.getElementById('clear-token-btn').onclick = () => {
+        clearToken();
+        renderTokenArea();
+        toggleManagedAreas(false);
+      };
+      toggleManagedAreas(true);
+    } else {
+      el.innerHTML = `
+        <div class="field-row">
+          <input type="password" id="token-input" placeholder="ghp_..." />
+          <button class="btn primary" id="save-token-btn">Kaydet</button>
+        </div>`;
+      document.getElementById('save-token-btn').onclick = () => {
+        const v = document.getElementById('token-input').value.trim();
+        if (!v) return;
+        setToken(v);
+        renderTokenArea();
+      };
+      toggleManagedAreas(false);
+    }
+  }
+
+  function toggleManagedAreas(show) {
+    document.getElementById('managed-area').style.display = show ? '' : 'none';
+    document.getElementById('trigger-area').style.display = show ? '' : 'none';
+    document.getElementById('live-area').style.display = show ? '' : 'none';
+    if (show) { renderWatchlistEditor(); renderDangerZone(); }
+  }
+
+  async function renderWatchlistEditor() {
+    const el = document.getElementById('wl-editor');
+    el.innerHTML = '<div class="hint">Yükleniyor…</div>';
+    try {
+      const { content } = await getRuntimeConfig();
+      if (!content.watchlist.length) {
+        el.innerHTML = '<div class="hint">Watchlist boş.</div>';
+        return;
+      }
+      el.innerHTML = content.watchlist.map((m, i) => `
+        <div class="wl-row" data-idx="${i}">
+          <div class="info">
+            <div class="n">${escapeHtml(m.home)} <span style="color:var(--text-2)">vs</span> ${escapeHtml(m.away)}</div>
+            <div class="id">${escapeHtml(m.match_id)}</div>
+          </div>
+          <div class="actions">
+            <button class="btn small toggle-btn">${m.active ? 'Pasif Yap' : 'Aktif Yap'}</button>
+            <button class="btn small danger remove-btn">Sil</button>
+          </div>
+        </div>
+      `).join('');
+      el.querySelectorAll('.toggle-btn').forEach(btn => {
+        btn.onclick = () => wlToggle(parseInt(btn.closest('.wl-row').dataset.idx, 10));
+      });
+      el.querySelectorAll('.remove-btn').forEach(btn => {
+        btn.onclick = () => wlRemove(parseInt(btn.closest('.wl-row').dataset.idx, 10));
+      });
+    } catch (e) {
+      el.innerHTML = `<div class="error-msg">${escapeHtml(e.message)}</div>`;
+    }
+  }
+
+  function setWlStatus(msg, cls) {
+    const el = document.getElementById('wl-status');
+    el.textContent = msg;
+    el.className = 'status-msg ' + (cls || '');
+  }
+
+  async function wlToggle(idx) {
+    setWlStatus('Güncelleniyor…', 'pending');
+    try {
+      const { content, sha } = await getRuntimeConfig();
+      content.watchlist[idx].active = !content.watchlist[idx].active;
+      const m = content.watchlist[idx];
+      await putRuntimeConfig(content, sha, `Panel: ${m.home} - ${m.away} ${m.active ? 'aktif' : 'pasif'} yapıldı`);
+      setWlStatus('Güncellendi. Bir sonraki kontrol turunda geçerli olacak.', 'ok');
+      renderWatchlistEditor();
+    } catch (e) {
+      setWlStatus(e.message, 'err');
+    }
+  }
+
+  async function wlRemove(idx) {
+    setWlStatus('Siliniyor…', 'pending');
+    try {
+      const { content, sha } = await getRuntimeConfig();
+      const [removed] = content.watchlist.splice(idx, 1);
+      await putRuntimeConfig(content, sha, `Panel: ${removed.home} - ${removed.away} watchlist'ten silindi`);
+      setWlStatus('Silindi.', 'ok');
+      renderWatchlistEditor();
+    } catch (e) {
+      setWlStatus(e.message, 'err');
+    }
+  }
+
+  async function wlAdd() {
+    const home = document.getElementById('add-home').value.trim();
+    const away = document.getElementById('add-away').value.trim();
+    const matchId = document.getElementById('add-matchid').value.trim();
+    if (!home || !away || !matchId) {
+      setWlStatus('Takım isimleri ve matchId zorunlu.', 'err');
+      return;
+    }
+    setWlStatus('Ekleniyor…', 'pending');
+    try {
+      const { content, sha } = await getRuntimeConfig();
+      content.watchlist.push({ match_id: matchId, home, away, active: true });
+      await putRuntimeConfig(content, sha, `Panel: ${home} - ${away} watchlist'e eklendi`);
+      document.getElementById('add-home').value = '';
+      document.getElementById('add-away').value = '';
+      document.getElementById('add-matchid').value = '';
+      setWlStatus('Eklendi.', 'ok');
+      renderWatchlistEditor();
+    } catch (e) {
+      setWlStatus(e.message, 'err');
+    }
+  }
+
+  function setTriggerStatus(msg, cls) {
+    const el = document.getElementById('trigger-status');
+    el.textContent = msg;
+    el.className = 'status-msg ' + (cls || '');
+  }
+
+  async function doTrigger() {
+    setTriggerStatus('Tetikleniyor…', 'pending');
+    try {
+      await triggerWorkflow();
+      setTriggerStatus('Tetiklendi — GitHub Actions birkaç saniye içinde başlayacak.', 'ok');
+    } catch (e) {
+      setTriggerStatus(e.message, 'err');
+    }
+  }
+
+  // ---------- Canlı Paylaşım: çok adımlı onaylı kontrol ----------
+  const CONFIRM_PHRASE = 'CANLI YAYIN';
+
+  async function renderDangerZone() {
+    const el = document.getElementById('danger-zone');
+    if (!getToken()) return;
+    const dryRun = lastStatus ? lastStatus.dry_run : true;
+
+    if (dryRun) {
+      el.className = 'danger-zone';
+      el.innerHTML = `
+        <div style="font-size:13px; color: var(--text-1); margin-bottom:10px;">
+          Sistem şu an <b>test modunda</b> — gol tespit edilse bile X'e gerçek paylaşım yapılmıyor.
+          Canlı paylaşımı açtığınızda, bundan sonraki her golde <b>otomatik ve geri dönüşsüz</b>
+          şekilde X'e tweet atılır (video ile birlikte).
+        </div>
+        <button class="btn danger" id="open-live-confirm">🔴 Canlı Paylaşımı Aç</button>
+        <div id="live-confirm-box"></div>
+        <div class="status-msg" id="live-status"></div>
+      `;
+      document.getElementById('open-live-confirm').onclick = () => {
+        document.getElementById('live-confirm-box').innerHTML = `
+          <div class="confirm-steps">
+            <label><input type="checkbox" id="live-ack1" /> Bunun geri dönüşü olmadığını, her golde otomatik gerçek tweet atılacağını anlıyorum.</label>
+            <label><input type="checkbox" id="live-ack2" /> X API kredisi (pay-per-use) her paylaşımda harcanacağını anlıyorum.</label>
+            <div class="field-row">
+              <input type="text" id="live-phrase" placeholder='Onaylamak için "${CONFIRM_PHRASE}" yazın' />
+            </div>
+            <button class="btn danger" id="confirm-live-btn" disabled>Evet, Canlı Paylaşımı Başlat</button>
+          </div>`;
+        const check = () => {
+          const ok = document.getElementById('live-ack1').checked
+            && document.getElementById('live-ack2').checked
+            && document.getElementById('live-phrase').value.trim() === CONFIRM_PHRASE;
+          document.getElementById('confirm-live-btn').disabled = !ok;
+        };
+        document.getElementById('live-ack1').onchange = check;
+        document.getElementById('live-ack2').onchange = check;
+        document.getElementById('live-phrase').oninput = check;
+        document.getElementById('confirm-live-btn').onclick = () => setDryRun(false);
+      };
+    } else {
+      el.className = 'danger-zone live-armed';
+      el.innerHTML = `
+        <div style="font-size:13px; color: var(--goal); font-weight:600; margin-bottom:10px;">
+          🔴 CANLI PAYLAŞIM AÇIK — sistem gerçek gollerde otomatik olarak X'e tweet atıyor.
+        </div>
+        <button class="btn" id="stop-live-btn">⏸ Test Moduna Dön (Acil Durdur)</button>
+        <div class="status-msg" id="live-status"></div>
+      `;
+      document.getElementById('stop-live-btn').onclick = () => setDryRun(true);
+    }
+  }
+
+  function setLiveStatus(msg, cls) {
+    const el = document.getElementById('live-status');
+    if (el) { el.textContent = msg; el.className = 'status-msg ' + (cls || ''); }
+  }
+
+  async function setDryRun(value) {
+    setLiveStatus('Güncelleniyor…', 'pending');
+    try {
+      const { content, sha } = await getRuntimeConfig();
+      content.dry_run = value;
+      await putRuntimeConfig(content, sha, `Panel: dry_run=${value}`);
+      setLiveStatus(value ? 'Test moduna dönüldü.' : 'Canlı paylaşım açıldı.', 'ok');
+      if (lastStatus) lastStatus.dry_run = value;
+      renderDangerZone();
+    } catch (e) {
+      setLiveStatus(e.message, 'err');
+    }
+  }
+
+  // ---------- init ----------
+  document.getElementById('settings-toggle').onclick = () => {
+    document.getElementById('settings').classList.toggle('open');
+  };
+  document.getElementById('add-match-btn').onclick = wlAdd;
+  document.getElementById('trigger-btn').onclick = doTrigger;
+
+  renderTokenArea();
   refresh();
   setInterval(refresh, REFRESH_MS);
 </script>

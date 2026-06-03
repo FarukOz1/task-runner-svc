@@ -7,12 +7,15 @@ Bu dosyada:
 - Veritabanı yolu
 gibi ayarlar tutulur.
 
-NOT: Maçkolik'in gerçek match_id / iddaa kodu değerlerini kendin doldurmalısın.
-Bunları bulmanın en kolay yolu: mackolik.com sitesinde ilgili maça tıkladığında
-URL'de veya sayfa kaynağında geçen sayısal kodu almak.
+Watchlist ve dry_run bayrağı artık runtime_config.json'dan okunuyor (kod
+değil, veri) - böylece docs/index.html panelindeki "Watchlist Yönetimi" ve
+"Canlı Paylaşım" bölümleri, GitHub API üzerinden bu dosyayı güncelleyerek
+otomasyonu koda dokunmadan yönetebiliyor.
 """
 
-from dataclasses import dataclass, field
+import json
+from dataclasses import dataclass
+from pathlib import Path
 from typing import List
 
 
@@ -24,15 +27,16 @@ class WatchedMatch:
     active: bool = True     # False ise worker bu maçı atlar
 
 
-# --- Buraya izlemek istediğin maçları ekle ---
-# NOT: Aşağıdaki kayıtlar SADECE pipeline'ı uçtan uca test etmek için eklendi.
-# Gerçek/canlı izleme için bunları kendi gerçek watchlist'inle değiştir.
-WATCHLIST: List[WatchedMatch] = [
-    # Bitti (0-0, hiç gol olmadı - sistem doğru şekilde hiçbir event üretmedi).
-    WatchedMatch(match_id="15l316xw14qu9smdp59e4epsk", home="Botafogo RJ", away="Palmeiras", active=False),
-    # Bitmiş test maçı (5 gol içeriyor, dedup zaten devrede - dry-run'da bir şey basmaz).
-    WatchedMatch(match_id="ccpfjtmwynfe9w3nko8q4xus4", home="Başakşehir", away="Galatasaray", active=False),
-]
+_RUNTIME_CONFIG_PATH = Path(__file__).resolve().parent / "runtime_config.json"
+
+with open(_RUNTIME_CONFIG_PATH, encoding="utf-8") as _f:
+    _runtime = json.load(_f)
+
+WATCHLIST: List[WatchedMatch] = [WatchedMatch(**m) for m in _runtime["watchlist"]]
+
+# Bulut otomasyonunun (GitHub Actions) gerçekten X'e paylaşım yapıp yapmayacağı.
+# Panel üzerinden "Canlı Paylaşımı Aç" (çok adımlı onaylı) butonuyla değiştirilir.
+DRY_RUN_CLOUD: bool = _runtime["dry_run"]
 
 # Kaç saniyede bir Maçkolik kontrol edilecek
 POLL_INTERVAL_SECONDS = 15

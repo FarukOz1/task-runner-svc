@@ -19,11 +19,6 @@ Kullanılan endpoint'ler (tarayıcı Network sekmesinden bulundu):
 DÜRÜST NOT: Bu endpoint'ler de resmi/dokümante değil, sitenin kendi
 frontend'inin kullandığı iç API'ler. Herhangi bir zaman değişebilir.
 Kullanım şartlarına uyup uymadığını sen değerlendiriyorsun.
-
-matchId formatı: uzun alfanumerik bir kod (ör. "996prqhfc4sm6szbpqclc3jmc"),
-eski goapi'deki sayısal iddaa kodundan farklı. Bunu bulmak için: mackolik.com
-üzerinde ilgili maçın sayfasını aç, tarayıcı Network sekmesinde
-"key-events" veya "gameStats" isteğini bul, matchId parametresini oradan al.
 """
 
 from __future__ import annotations

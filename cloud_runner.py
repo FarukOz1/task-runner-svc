@@ -20,11 +20,10 @@ import json
 import time
 from datetime import datetime, timezone
 
-from config import WATCHLIST, POLL_INTERVAL_SECONDS, GOAL_VIDEO_PATH
+from config import WATCHLIST, POLL_INTERVAL_SECONDS, GOAL_VIDEO_PATH, DRY_RUN_CLOUD
 from event_detector import find_new_goals
 from tweet_templates import build_goal_tweet
 from state_store import init_db, mark_event_published
-from main import DRY_RUN_CLOUD
 
 RUN_DURATION_SECONDS = 4.5 * 60  # bir sonraki 5 dakikalık tetiklemeyle çakışmasın
 STATUS_PATH = "status.json"

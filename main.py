@@ -36,12 +36,6 @@ from event_detector import find_new_goals
 from tweet_templates import build_goal_tweet
 from state_store import init_db, mark_event_published
 
-# cloud_runner.py (GitHub Actions) bu bayrağı kullanır. X API'nin gerçek
-# paylaşım yolu (x_publisher.py) henüz kullanıcı onayıyla tek seferlik test
-# edilmedi - bulutta otomatik/sürekli gerçek paylaşıma SADECE bu onay
-# alındıktan sonra, bilerek False yapılarak geçilmeli.
-DRY_RUN_CLOUD = True
-
 
 def run_once(dry_run: bool) -> None:
     for match in WATCHLIST:

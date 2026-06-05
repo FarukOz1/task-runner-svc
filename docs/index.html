@@ -446,6 +446,15 @@
         <div id="managed-area" style="display:none;">
           <div class="section-label">Watchlist Yönetimi</div>
           <div id="wl-editor"></div>
+
+          <div class="field-row" style="margin-top:14px;">
+            <input type="text" id="add-url" placeholder="mackolik.com maç linkini buraya yapıştır (otomatik doldurur)" />
+            <button class="btn" id="parse-url-btn">Linkten Doldur</button>
+          </div>
+          <div class="hint" style="margin-top:4px;">
+            Örn: https://www.mackolik.com/mac/takim1-vs-takim2/matchId — matchId ve takım isimleri otomatik ayıklanır, aşağıdan kontrol edip düzenleyebilirsin.
+          </div>
+
           <div class="add-form">
             <input type="text" id="add-home" placeholder="Ev sahibi takım" />
             <input type="text" id="add-away" placeholder="Deplasman takım" />
@@ -750,6 +759,37 @@
     }
   }
 
+  function parseMackolikUrl(raw) {
+    try {
+      const u = new URL(raw.trim());
+      if (!/mackolik\.com$/i.test(u.hostname.replace(/^www\./, ''))) return null;
+      const parts = u.pathname.split('/').filter(Boolean);
+      if (parts.length < 3 || parts[0] !== 'mac') return null;
+      const matchId = decodeURIComponent(parts[parts.length - 1]);
+      const slug = decodeURIComponent(parts[parts.length - 2]);
+      const teams = slug.split('-vs-');
+      const cap = s => s.split('-').filter(Boolean).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+      const home = teams[0] ? cap(teams[0]) : '';
+      const away = teams[1] ? cap(teams[1]) : '';
+      return { matchId, home, away };
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function doParseUrl() {
+    const raw = document.getElementById('add-url').value;
+    const parsed = parseMackolikUrl(raw);
+    if (!parsed) {
+      setWlStatus('Link tanınamadı — mackolik.com/mac/... formatında olmalı. matchId\'yi elle de girebilirsin.', 'err');
+      return;
+    }
+    document.getElementById('add-matchid').value = parsed.matchId;
+    if (parsed.home) document.getElementById('add-home').value = parsed.home;
+    if (parsed.away) document.getElementById('add-away').value = parsed.away;
+    setWlStatus('Dolduruldu — takım isimlerini kontrol edip "+ Ekle" ile onayla.', 'ok');
+  }
+
   async function wlAdd() {
     const home = document.getElementById('add-home').value.trim();
     const away = document.getElementById('add-away').value.trim();
@@ -867,6 +907,7 @@
     document.getElementById('settings').classList.toggle('open');
   };
   document.getElementById('add-match-btn').onclick = wlAdd;
+  document.getElementById('parse-url-btn').onclick = doParseUrl;
   document.getElementById('trigger-btn').onclick = doTrigger;
 
   renderTokenArea();

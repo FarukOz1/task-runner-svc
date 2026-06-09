@@ -38,6 +38,28 @@ jobs:
         run: |
           git config user.name "nebulalive-bot"
           git config user.email "actions@users.noreply.github.com"
+
           git add nebulalive.db status.json
-          git diff --staged --quiet || git commit -m "state güncelle [skip ci]"
-          git push
+          if git diff --staged --quiet; then
+            echo "Değişiklik yok, commit atlanıyor."
+            exit 0
+          fi
+          git commit -m "state güncelle [skip ci]"
+
+          # Panel/elle push'lar veya çakışan başka bir çalıştırma yüzünden
+          # remote ilerlemiş olabilir - push başarısız olursa en güncel
+          # remote'un üzerine (kendi state'imizi kaybetmeden) yeniden dene.
+          for i in 1 2 3 4 5; do
+            if git push; then
+              echo "Push başarılı (deneme $i)."
+              exit 0
+            fi
+            echo "Push başarısız (deneme $i), remote'a göre yeniden deneniyor..."
+            git fetch origin main
+            git reset --soft origin/main
+            git add nebulalive.db status.json
+            git commit -m "state güncelle [skip ci]"
+            sleep 3
+          done
+          echo "Push 5 denemeden sonra başarısız oldu." >&2
+          exit 1

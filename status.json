@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-07T13:19:52Z",
-  "run_started_at": "2026-09-07T13:15:07Z",
+  "last_updated": "2026-09-07T13:30:11Z",
+  "run_started_at": "2026-09-07T13:25:35Z",
   "poll_interval_seconds": 15,
   "poll_count": 18,
   "dry_run": true,
@@ -9,13 +9,13 @@
       "match_id": "cd0r0kivu25m8102kjxaran10",
       "home": "Çaykur Rizespor",
       "away": "Alanyaspor",
-      "active": true
+      "active": false
     },
     {
       "match_id": "cgtt9jkk5ezlnd04ede3fwpw4",
       "home": "Istanbulspor",
       "away": "Iğdır Fk",
-      "active": true
+      "active": false
     },
     {
       "match_id": "aequabno0z141494ct5clr4t0",
@@ -26,272 +26,102 @@
   ],
   "recent_log": [
     {
-      "time": "2026-09-07T13:15:09Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:15:11Z",
-      "level": "info",
-      "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:15:12Z",
+      "time": "2026-09-07T13:25:37Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T13:15:27Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:15:27Z",
-      "level": "info",
-      "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:15:27Z",
+      "time": "2026-09-07T13:25:52Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T13:15:42Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:15:43Z",
-      "level": "info",
-      "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:15:43Z",
+      "time": "2026-09-07T13:26:07Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T13:15:58Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:15:58Z",
-      "level": "info",
-      "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:15:58Z",
+      "time": "2026-09-07T13:26:22Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T13:16:14Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:16:14Z",
-      "level": "info",
-      "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:16:14Z",
+      "time": "2026-09-07T13:26:37Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T13:16:30Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:16:30Z",
-      "level": "info",
-      "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:16:30Z",
+      "time": "2026-09-07T13:26:53Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T13:16:45Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
+      "time": "2026-09-07T13:27:08Z",
+      "level": "goal",
+      "message": "GOL! Kuzey Kore U20 K 1-0 Portekiz U20 K (25') - Bilinmiyor"
     },
     {
-      "time": "2026-09-07T13:16:45Z",
+      "time": "2026-09-07T13:27:08Z",
       "level": "info",
-      "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
+      "message": "[DRY-RUN] X'e gönderilmedi (test modu)"
     },
     {
-      "time": "2026-09-07T13:16:46Z",
-      "level": "info",
-      "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:17:01Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:17:01Z",
-      "level": "info",
-      "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:17:01Z",
+      "time": "2026-09-07T13:27:23Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T13:17:16Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:17:16Z",
-      "level": "info",
-      "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:17:17Z",
+      "time": "2026-09-07T13:27:39Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T13:17:32Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:17:32Z",
-      "level": "info",
-      "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:17:32Z",
+      "time": "2026-09-07T13:27:54Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T13:17:48Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:17:48Z",
-      "level": "info",
-      "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:17:48Z",
+      "time": "2026-09-07T13:28:09Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T13:18:03Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:18:04Z",
-      "level": "info",
-      "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:18:04Z",
+      "time": "2026-09-07T13:28:24Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T13:18:19Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
+      "time": "2026-09-07T13:28:39Z",
+      "level": "goal",
+      "message": "GOL! Kuzey Kore U20 K 1-0 Portekiz U20 K (25') - Kang Ryu-Mi"
     },
     {
-      "time": "2026-09-07T13:18:19Z",
+      "time": "2026-09-07T13:28:39Z",
       "level": "info",
-      "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
+      "message": "[DRY-RUN] X'e gönderilmedi (test modu)"
     },
     {
-      "time": "2026-09-07T13:18:20Z",
-      "level": "info",
-      "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:18:35Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:18:35Z",
-      "level": "info",
-      "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:18:35Z",
+      "time": "2026-09-07T13:28:55Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T13:18:50Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:18:51Z",
-      "level": "info",
-      "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:18:51Z",
+      "time": "2026-09-07T13:29:10Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T13:19:06Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:19:06Z",
-      "level": "info",
-      "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:19:06Z",
+      "time": "2026-09-07T13:29:25Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T13:19:22Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:19:22Z",
-      "level": "info",
-      "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:19:22Z",
+      "time": "2026-09-07T13:29:40Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T13:19:37Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:19:37Z",
-      "level": "info",
-      "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T13:19:37Z",
+      "time": "2026-09-07T13:29:56Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     }

@@ -2,27 +2,21 @@
   "dry_run": true,
   "watchlist": [
     {
+      "match_id": "cd0r0kivu25m8102kjxaran10",
+      "home": "Çaykur Rizespor",
+      "away": "Alanyaspor",
+      "active": false
+    },
+    {
       "match_id": "cgtt9jkk5ezlnd04ede3fwpw4",
       "home": "Istanbulspor",
       "away": "Iğdır Fk",
-      "active": true
+      "active": false
     },
     {
       "match_id": "aequabno0z141494ct5clr4t0",
       "home": "Kuzey Kore U20 K",
       "away": "Portekiz U20 K",
-      "active": true
-    },
-    {
-      "match_id": "cd0r0kivu25m8102kjxaran10",
-      "home": "Çaykur Rizespor",
-      "away": "Alanyaspor",
-      "active": true
-    },
-    {
-      "match_id": "ch658ik0eard3nj4agrm1d5hw",
-      "home": "Esenler Erokspor",
-      "away": "Kayserispor",
       "active": true
     }
   ]

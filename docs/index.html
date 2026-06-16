@@ -506,9 +506,12 @@
   const GH_API = `https://api.github.com/repos/${OWNER}/${REPO}`;
   const CONFIG_PATH = "runtime_config.json";
   const WORKFLOW_FILE = "nebulalive.yml";
-  // Contents API kimliksiz (token'sız) istekte 60/saat sınırlı - 75 saniyede
-  // bir tazeleme bu sınırın güvenle altında kalır (saatte ~48 istek).
-  const REFRESH_MS = 75000;
+  // Contents API kimliksiz istekte 60/saat sınırlı (Türkiye'de yaygın olan
+  // CGNAT yüzünden bu limit IP'ni paylaşan başkalarıyla da bölüşülüyor
+  // olabilir - erken tükenebilir). Token varken limit 5000/saat'e çıkıyor,
+  // bu yüzden aralığı token varlığına göre uyarlıyoruz.
+  const REFRESH_MS_WITH_TOKEN = 30000;
+  const REFRESH_MS_NO_TOKEN = 150000;
   const TOKEN_KEY = "nebula_gh_token";
 
   // ---------- yardımcılar ----------
@@ -598,10 +601,15 @@
       // raw.githubusercontent.com kendi CDN'inde ~5 dakikaya kadar eski veri
       // önbelleğe alabiliyor (query param'la bile bozulmuyor) - bunun yerine
       // GitHub Contents API'sini "raw" kabul başlığıyla kullanıyoruz, bu her
-      // zaman güncel veriyi döner (public repo, token gerekmez).
+      // zaman güncel veriyi döner. Kimliksiz istekler saatte 60 ile sınırlı
+      // (403 riski); token varsa (zaten watchlist yönetimi için girilmiş
+      // olabilir) ekleyip limiti saatte 5000'e çıkarıyoruz.
+      const headers = { 'Accept': 'application/vnd.github.raw+json' };
+      const token = getToken();
+      if (token) headers['Authorization'] = 'Bearer ' + token;
       const res = await fetch(`${GH_API}/contents/status.json?t=${Date.now()}`, {
         cache: 'no-store',
-        headers: { 'Accept': 'application/vnd.github.raw+json' },
+        headers,
       });
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const status = await res.json();
@@ -616,6 +624,16 @@
       document.getElementById('matches').innerHTML = `<div class="error-msg">Veri alınamadı: ${escapeHtml(e.message)}</div>`;
       document.getElementById('log').innerHTML = `<div class="error-msg">Veri alınamadı.</div>`;
     }
+  }
+
+  let refreshTimer = null;
+  function scheduleRefresh() {
+    if (refreshTimer) clearTimeout(refreshTimer);
+    const delay = getToken() ? REFRESH_MS_WITH_TOKEN : REFRESH_MS_NO_TOKEN;
+    refreshTimer = setTimeout(async () => {
+      await refresh();
+      scheduleRefresh();
+    }, delay);
   }
 
   // ---------- GitHub API (token gerektiren yazma işlemleri) ----------
@@ -920,7 +938,7 @@
 
   renderTokenArea();
   refresh();
-  setInterval(refresh, REFRESH_MS);
+  scheduleRefresh();
 
   // Tarayıcı arka plandaki sekmelerde zamanlayıcıları yavaşlatabiliyor -
   // sekmeye geri dönüldüğünde anında tazele.

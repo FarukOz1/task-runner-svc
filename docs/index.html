@@ -921,6 +921,12 @@
   renderTokenArea();
   refresh();
   setInterval(refresh, REFRESH_MS);
+
+  // Tarayıcı arka plandaki sekmelerde zamanlayıcıları yavaşlatabiliyor -
+  // sekmeye geri dönüldüğünde anında tazele.
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') refresh();
+  });
 </script>
 </body>
 </html>

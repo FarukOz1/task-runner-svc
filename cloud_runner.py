@@ -25,7 +25,11 @@ from event_detector import find_new_goals
 from tweet_templates import build_goal_tweet
 from state_store import init_db, mark_event_published
 
-RUN_DURATION_SECONDS = 4.5 * 60  # bir sonraki 5 dakikalık tetiklemeyle çakışmasın
+# 4.5 dakika + checkout/pip/commit ek yükü (~45-60sn) toplamda 5 dakikalık
+# tetikleme aralığını AŞIYORDU - bu da GitHub'ın zamanlanmış (cron)
+# tetiklemelerinin çakışma (concurrency) yüzünden sürekli atlanmasına neden
+# oluyordu. 3 dakikaya indirerek gerçek bir boşluk bırakıyoruz.
+RUN_DURATION_SECONDS = 3 * 60
 STATUS_PATH = "status.json"
 MAX_LOG_ENTRIES = 80
 

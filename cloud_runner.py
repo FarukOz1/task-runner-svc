@@ -49,7 +49,7 @@ def _poll_once(log: list) -> None:
             continue
 
         try:
-            new_goals = find_new_goals(match.match_id, match.home, match.away)
+            new_goals = find_new_goals(match.match_id, match.home, match.away, match.hashtags)
         except Exception as e:
             _log(log, "error", f"{match.home} - {match.away}: {type(e).__name__}: {e}")
             continue
@@ -84,7 +84,7 @@ def _write_status(log: list, poll_count: int, run_started_at: str) -> None:
         "poll_count": poll_count,
         "dry_run": DRY_RUN_CLOUD,
         "watchlist": [
-            {"match_id": m.match_id, "home": m.home, "away": m.away, "active": m.active}
+            {"match_id": m.match_id, "home": m.home, "away": m.away, "active": m.active, "hashtags": m.hashtags}
             for m in WATCHLIST
         ],
         "recent_log": log[-MAX_LOG_ENTRIES:],

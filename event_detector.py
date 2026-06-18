@@ -33,6 +33,7 @@ class GoalEvent:
     player_name: str
     event_id: str          # dedup için benzersiz kimlik
     sub_type: str = ""     # "goal", "penalty-goal", "own-goal" vb.
+    hashtags: str = ""     # "#FBvKNY #FenerinMaçıVar" gibi, maça özel
 
 
 def _make_event_id(match_id: str, ev: KeyEvent) -> str:
@@ -43,7 +44,7 @@ def _make_event_id(match_id: str, ev: KeyEvent) -> str:
     return f"{match_id}-{ev.time_min}-{ev.score}"
 
 
-def find_new_goals(match_id: str, home_name: str, away_name: str) -> list[GoalEvent]:
+def find_new_goals(match_id: str, home_name: str, away_name: str, hashtags: str = "") -> list[GoalEvent]:
     """
     Maçın güncel key-events listesini çeker, henüz paylaşılmamış gol
     event'lerini döner. Birden fazla yeni gol varsa (ör. worker bir süre
@@ -86,6 +87,7 @@ def find_new_goals(match_id: str, home_name: str, away_name: str) -> list[GoalEv
                 player_name=ev.player_name,
                 event_id=event_id,
                 sub_type=ev.sub_type or "",
+                hashtags=hashtags,
             )
         )
 

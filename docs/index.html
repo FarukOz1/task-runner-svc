@@ -459,8 +459,12 @@
             <input type="text" id="add-home" placeholder="Ev sahibi takım" />
             <input type="text" id="add-away" placeholder="Deplasman takım" />
             <input type="text" id="add-matchid" placeholder="Maçkolik matchId" />
+          </div>
+          <div class="field-row" style="margin-top:8px;">
+            <input type="text" id="add-hashtags" placeholder="Hashtag'ler (opsiyonel) — örn: #FBvKNY #FenerinMaçıVar" />
             <button class="btn primary" id="add-match-btn">+ Ekle</button>
           </div>
+          <div class="hint" style="margin-top:4px;">Bu maça özel hashtag'ler tweet'in sonuna #NebulaLive'ın yanına eklenir.</div>
           <div class="status-msg" id="wl-status"></div>
         </div>
 
@@ -734,13 +738,18 @@
           <div class="info">
             <div class="n">${escapeHtml(m.home)} <span style="color:var(--text-2)">vs</span> ${escapeHtml(m.away)}</div>
             <div class="id">${escapeHtml(m.match_id)}</div>
+            <div class="id" style="color:var(--accent-2)">${m.hashtags ? escapeHtml(m.hashtags) : '(hashtag yok)'}</div>
           </div>
           <div class="actions">
+            <button class="btn small hashtag-btn">Etiket</button>
             <button class="btn small toggle-btn">${m.active ? 'Pasif Yap' : 'Aktif Yap'}</button>
             <button class="btn small danger remove-btn">Sil</button>
           </div>
         </div>
       `).join('');
+      el.querySelectorAll('.hashtag-btn').forEach(btn => {
+        btn.onclick = () => wlEditHashtags(parseInt(btn.closest('.wl-row').dataset.idx, 10));
+      });
       el.querySelectorAll('.toggle-btn').forEach(btn => {
         btn.onclick = () => wlToggle(parseInt(btn.closest('.wl-row').dataset.idx, 10));
       });
@@ -766,6 +775,22 @@
       const m = content.watchlist[idx];
       await putRuntimeConfig(content, sha, `Panel: ${m.home} - ${m.away} ${m.active ? 'aktif' : 'pasif'} yapıldı`);
       setWlStatus('Güncellendi. Bir sonraki kontrol turunda geçerli olacak.', 'ok');
+      renderWatchlistEditor();
+    } catch (e) {
+      setWlStatus(e.message, 'err');
+    }
+  }
+
+  async function wlEditHashtags(idx) {
+    try {
+      const { content, sha } = await getRuntimeConfig();
+      const current = content.watchlist[idx].hashtags || '';
+      const next = window.prompt('Bu maç için hashtag\'ler (boşlukla ayrılmış, örn: #FBvKNY #FenerinMaçıVar):', current);
+      if (next === null) return; // vazgeçildi
+      content.watchlist[idx].hashtags = next.trim();
+      const m = content.watchlist[idx];
+      await putRuntimeConfig(content, sha, `Panel: ${m.home} - ${m.away} hashtag güncellendi`);
+      setWlStatus('Hashtag güncellendi.', 'ok');
       renderWatchlistEditor();
     } catch (e) {
       setWlStatus(e.message, 'err');
@@ -820,6 +845,7 @@
     const home = document.getElementById('add-home').value.trim();
     const away = document.getElementById('add-away').value.trim();
     const matchId = document.getElementById('add-matchid').value.trim();
+    const hashtags = document.getElementById('add-hashtags').value.trim();
     if (!home || !away || !matchId) {
       setWlStatus('Takım isimleri ve matchId zorunlu.', 'err');
       return;
@@ -827,11 +853,12 @@
     setWlStatus('Ekleniyor…', 'pending');
     try {
       const { content, sha } = await getRuntimeConfig();
-      content.watchlist.push({ match_id: matchId, home, away, active: true });
+      content.watchlist.push({ match_id: matchId, home, away, active: true, hashtags });
       await putRuntimeConfig(content, sha, `Panel: ${home} - ${away} watchlist'e eklendi`);
       document.getElementById('add-home').value = '';
       document.getElementById('add-away').value = '';
       document.getElementById('add-matchid').value = '';
+      document.getElementById('add-hashtags').value = '';
       setWlStatus('Eklendi.', 'ok');
       renderWatchlistEditor();
     } catch (e) {

@@ -25,6 +25,7 @@ class WatchedMatch:
     home: str               # Ev sahibi takım adı (görüntüleme amaçlı)
     away: str               # Deplasman takım adı (görüntüleme amaçlı)
     active: bool = True     # False ise worker bu maçı atlar
+    hashtags: str = ""      # "#FBvKNY #FenerinMaçıVar" gibi, tweet sonuna eklenir
 
 
 _RUNTIME_CONFIG_PATH = Path(__file__).resolve().parent / "runtime_config.json"

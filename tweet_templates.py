@@ -19,10 +19,14 @@ def build_goal_tweet(event: GoalEvent) -> str:
     else:
         headline = f"⚽ GOOOOOL! {scoring_team} için {event.player_name}!"
 
+    tags = "#NebulaLive"
+    if event.hashtags:
+        tags = f"{tags} {event.hashtags}"
+
     tweet = (
         f"{headline}\n\n"
         f"{event.minute}' dakika\n"
         f"{event.home} {event.score} {event.away}\n\n"
-        f"#NebulaLive"
+        f"{tags}"
     )
     return tweet

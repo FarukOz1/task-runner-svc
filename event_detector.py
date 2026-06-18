@@ -36,7 +36,11 @@ class GoalEvent:
 
 
 def _make_event_id(match_id: str, ev: KeyEvent) -> str:
-    return f"{match_id}-{ev.time_min}-{ev.player_name}-{ev.score}"
+    # NOT: oyuncu adı bilerek event_id'ye dahil edilmiyor - Maçkolik golü
+    # ilk gösterdiğinde oyuncu adı birkaç saniye boş kalabiliyor, sonradan
+    # doluyor. Ad event_id'nin parçası olsaydı, ad değiştiğinde event_id de
+    # değişir ve dedup bunu "yeni gol" sanıp aynı golü iki kez paylaşırdı.
+    return f"{match_id}-{ev.time_min}-{ev.score}"
 
 
 def find_new_goals(match_id: str, home_name: str, away_name: str) -> list[GoalEvent]:
@@ -63,6 +67,14 @@ def find_new_goals(match_id: str, home_name: str, away_name: str) -> list[GoalEv
         if is_event_published(event_id):
             continue
 
+        if not ev.player_name:
+            # Maçkolik golü ilk anda oyuncu adı olmadan gösterebiliyor, ad
+            # birkaç saniye içinde beliriyor. event_id sabit kaldığı için
+            # (ada bağlı değil) burada atlamak güvenli - bir sonraki pollde
+            # ad gelmişse yakalanır, dedup bozulmaz/çift paylaşım olmaz.
+            print(f"[BİLGİ] {home_name} - {away_name}: gol tespit edildi ({ev.time_min}', {ev.score}), oyuncu adı henüz gelmedi - bekleniyor")
+            continue
+
         new_goals.append(
             GoalEvent(
                 match_id=match_id,
@@ -71,7 +83,7 @@ def find_new_goals(match_id: str, home_name: str, away_name: str) -> list[GoalEv
                 score=ev.score,
                 minute=ev.time_min,
                 scoring_side=ev.position or "",
-                player_name=ev.player_name or "Bilinmiyor",
+                player_name=ev.player_name,
                 event_id=event_id,
                 sub_type=ev.sub_type or "",
             )

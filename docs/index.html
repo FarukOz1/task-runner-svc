@@ -551,10 +551,10 @@
     el.innerHTML = html;
   }
 
-  function renderStats(status) {
-    const activeCount = status.watchlist.filter(m => m.active).length;
+  function renderStats(status, watchlist) {
+    const activeCount = watchlist.filter(m => m.active).length;
     const items = [
-      ["Son Güncelleme", timeAgo(status.last_updated)],
+      ["Son Bulut Verisi", timeAgo(status.last_updated)],
       ["Kontrol Aralığı", status.poll_interval_seconds + " sn"],
       ["Bu Turda Kontrol", status.poll_count + " kez"],
       ["Aktif Maç", activeCount],
@@ -564,14 +564,14 @@
     ).join('');
   }
 
-  function renderMatches(status) {
+  function renderMatches(watchlist) {
     const el = document.getElementById('matches');
-    document.getElementById('match-count').textContent = `(${status.watchlist.length})`;
-    if (!status.watchlist.length) {
+    document.getElementById('match-count').textContent = `(${watchlist.length})`;
+    if (!watchlist.length) {
       el.innerHTML = '<div class="empty">Watchlist boş.</div>';
       return;
     }
-    el.innerHTML = status.watchlist.map(m => `
+    el.innerHTML = watchlist.map(m => `
       <div class="match-card">
         <div class="teams">
           <span>${escapeHtml(m.home)}</span>
@@ -601,13 +601,25 @@
   }
 
   async function refresh() {
+    // status.json (Actions çalıştırma sonucu - poll sayısı, log, son çalışma
+    // zamanı) ve runtime_config.json (anlık watchlist ayarı) İKİ AYRI
+    // kaynak: status.json sadece bulut çalıştıkça güncellenir, ama
+    // runtime_config.json panelden değiştirilir değişmez günceldir. "İzlenen
+    // Maçlar" kartını runtime_config.json'dan okuyoruz ki cron gecikse/
+    // çalışmasa bile aktif/pasif durumu HER ZAMAN doğru görünsün.
+    let watchlist = null;
+    try {
+      const { content } = await getRuntimeConfig();
+      watchlist = content.watchlist;
+      renderMatches(watchlist);
+    } catch (e) {
+      document.getElementById('matches').innerHTML = `<div class="error-msg">Veri alınamadı: ${escapeHtml(e.message)}</div>`;
+    }
+
     try {
       // raw.githubusercontent.com kendi CDN'inde ~5 dakikaya kadar eski veri
       // önbelleğe alabiliyor (query param'la bile bozulmuyor) - bunun yerine
-      // GitHub Contents API'sini "raw" kabul başlığıyla kullanıyoruz, bu her
-      // zaman güncel veriyi döner. Kimliksiz istekler saatte 60 ile sınırlı
-      // (403 riski); token varsa (zaten watchlist yönetimi için girilmiş
-      // olabilir) ekleyip limiti saatte 5000'e çıkarıyoruz.
+      // GitHub Contents API'sini "raw" kabul başlığıyla kullanıyoruz.
       const headers = { 'Accept': 'application/vnd.github.raw+json' };
       const token = getToken();
       if (token) headers['Authorization'] = 'Bearer ' + token;
@@ -619,14 +631,12 @@
       const status = await res.json();
       lastStatus = status;
       renderBadges(status, false);
-      renderStats(status);
-      renderMatches(status);
+      renderStats(status, watchlist || status.watchlist);
       renderLog(status);
       renderDangerZone();
     } catch (e) {
       renderBadges({}, true);
-      document.getElementById('matches').innerHTML = `<div class="error-msg">Veri alınamadı: ${escapeHtml(e.message)}</div>`;
-      document.getElementById('log').innerHTML = `<div class="error-msg">Veri alınamadı.</div>`;
+      document.getElementById('log').innerHTML = `<div class="error-msg">Veri alınamadı: ${escapeHtml(e.message)}</div>`;
     }
   }
 
@@ -647,10 +657,8 @@
 
   async function ghFetch(path, opts = {}) {
     const token = getToken();
-    const headers = Object.assign({
-      'Accept': 'application/vnd.github+json',
-      'Authorization': 'Bearer ' + token,
-    }, opts.headers || {});
+    const headers = Object.assign({ 'Accept': 'application/vnd.github+json' }, opts.headers || {});
+    if (token) headers['Authorization'] = 'Bearer ' + token;
     const res = await fetch(GH_API + path, Object.assign({}, opts, { headers }));
     if (!res.ok) {
       let msg = '';

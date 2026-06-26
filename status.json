@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-07T14:30:46Z",
-  "run_started_at": "2026-09-07T14:27:33Z",
+  "last_updated": "2026-09-07T14:34:23Z",
+  "run_started_at": "2026-09-07T14:31:13Z",
   "poll_interval_seconds": 15,
   "poll_count": 12,
   "dry_run": true,
@@ -36,187 +36,182 @@
   ],
   "recent_log": [
     {
-      "time": "2026-09-07T14:27:34Z",
+      "time": "2026-09-07T14:31:14Z",
       "level": "info",
       "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:27:34Z",
+      "time": "2026-09-07T14:31:15Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:27:34Z",
+      "time": "2026-09-07T14:31:16Z",
       "level": "info",
       "message": "Esenler Erokspor - Kayserispor: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:27:49Z",
+      "time": "2026-09-07T14:31:31Z",
       "level": "info",
       "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:27:50Z",
+      "time": "2026-09-07T14:31:31Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:27:50Z",
+      "time": "2026-09-07T14:31:32Z",
       "level": "info",
       "message": "Esenler Erokspor - Kayserispor: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:28:06Z",
+      "time": "2026-09-07T14:31:47Z",
       "level": "info",
       "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:28:06Z",
+      "time": "2026-09-07T14:31:47Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:28:06Z",
+      "time": "2026-09-07T14:31:47Z",
       "level": "info",
       "message": "Esenler Erokspor - Kayserispor: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:28:22Z",
+      "time": "2026-09-07T14:32:02Z",
       "level": "info",
       "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:28:22Z",
+      "time": "2026-09-07T14:32:03Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:28:22Z",
+      "time": "2026-09-07T14:32:03Z",
       "level": "info",
       "message": "Esenler Erokspor - Kayserispor: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:28:38Z",
+      "time": "2026-09-07T14:32:18Z",
       "level": "info",
       "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:28:38Z",
+      "time": "2026-09-07T14:32:19Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:28:39Z",
+      "time": "2026-09-07T14:32:19Z",
       "level": "info",
       "message": "Esenler Erokspor - Kayserispor: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:28:54Z",
+      "time": "2026-09-07T14:32:34Z",
       "level": "info",
       "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:28:55Z",
+      "time": "2026-09-07T14:32:34Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:28:55Z",
+      "time": "2026-09-07T14:32:34Z",
       "level": "info",
       "message": "Esenler Erokspor - Kayserispor: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:29:11Z",
+      "time": "2026-09-07T14:32:49Z",
       "level": "info",
       "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:29:11Z",
+      "time": "2026-09-07T14:32:50Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:29:11Z",
+      "time": "2026-09-07T14:32:50Z",
       "level": "info",
       "message": "Esenler Erokspor - Kayserispor: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:29:26Z",
+      "time": "2026-09-07T14:33:05Z",
       "level": "info",
       "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:29:27Z",
+      "time": "2026-09-07T14:33:05Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:29:27Z",
+      "time": "2026-09-07T14:33:05Z",
       "level": "info",
       "message": "Esenler Erokspor - Kayserispor: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:29:42Z",
+      "time": "2026-09-07T14:33:21Z",
       "level": "info",
       "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:29:43Z",
+      "time": "2026-09-07T14:33:21Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:29:43Z",
+      "time": "2026-09-07T14:33:21Z",
       "level": "info",
       "message": "Esenler Erokspor - Kayserispor: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:29:58Z",
-      "level": "goal",
-      "message": "GOL! Istanbulspor 0-1 Iğdır Fk (28') - Arda Çolak"
-    },
-    {
-      "time": "2026-09-07T14:29:58Z",
-      "level": "info",
-      "message": "[DRY-RUN] X'e gönderilmedi (test modu)"
-    },
-    {
-      "time": "2026-09-07T14:29:58Z",
-      "level": "info",
-      "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T14:29:59Z",
-      "level": "info",
-      "message": "Esenler Erokspor - Kayserispor: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T14:30:14Z",
+      "time": "2026-09-07T14:33:36Z",
       "level": "info",
       "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:30:14Z",
+      "time": "2026-09-07T14:33:36Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:30:14Z",
+      "time": "2026-09-07T14:33:36Z",
       "level": "info",
       "message": "Esenler Erokspor - Kayserispor: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:30:30Z",
+      "time": "2026-09-07T14:33:52Z",
       "level": "info",
       "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:30:30Z",
+      "time": "2026-09-07T14:33:52Z",
       "level": "info",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T14:30:31Z",
+      "time": "2026-09-07T14:33:52Z",
+      "level": "info",
+      "message": "Esenler Erokspor - Kayserispor: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T14:34:07Z",
+      "level": "info",
+      "message": "Istanbulspor - Iğdır Fk: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T14:34:07Z",
+      "level": "info",
+      "message": "Kuzey Kore U20 K - Portekiz U20 K: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T14:34:08Z",
       "level": "info",
       "message": "Esenler Erokspor - Kayserispor: kontrol edildi, değişiklik yok"
     }

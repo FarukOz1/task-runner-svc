@@ -234,16 +234,6 @@
 
   .match-card .teams .vs { color: var(--text-2); font-weight: 500; padding: 0 8px; font-size: 12px; }
 
-  .live-score {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--live);
-    text-align: center;
-    margin-bottom: 8px;
-    letter-spacing: 1px;
-  }
-
   .match-card .meta {
     display: flex;
     align-items: center;
@@ -574,30 +564,26 @@
     ).join('');
   }
 
-  function renderMatches(watchlist, scoreMap) {
+  function renderMatches(watchlist) {
     const el = document.getElementById('matches');
     document.getElementById('match-count').textContent = `(${watchlist.length})`;
     if (!watchlist.length) {
       el.innerHTML = '<div class="empty">Watchlist boş.</div>';
       return;
     }
-    el.innerHTML = watchlist.map(m => {
-      const score = scoreMap ? scoreMap[m.match_id] : null;
-      return `
+    el.innerHTML = watchlist.map(m => `
       <div class="match-card">
         <div class="teams">
           <span>${escapeHtml(m.home)}</span>
           <span class="vs">vs</span>
           <span>${escapeHtml(m.away)}</span>
         </div>
-        ${m.active && score ? `<div class="live-score">${escapeHtml(score)}</div>` : ''}
         <div class="meta">
           <span class="mid">${escapeHtml(m.match_id)}</span>
           <span class="pill ${m.active ? 'active' : 'inactive'}">${m.active ? 'İzleniyor' : 'Pasif'}</span>
         </div>
       </div>
-    `;
-    }).join('');
+    `).join('');
   }
 
   function renderLog(status) {
@@ -615,17 +601,17 @@
   }
 
   async function refresh() {
-    // status.json (Actions çalıştırma sonucu - poll sayısı, log, canlı skor,
-    // son çalışma zamanı) ve runtime_config.json (anlık watchlist ayarı)
-    // İKİ AYRI kaynak: status.json sadece bulut çalıştıkça güncellenir, ama
-    // runtime_config.json panelden değiştirilir değişmez günceldir. Aktif/
-    // pasif durumu ve maç listesini runtime_config'ten alıyoruz ki cron
-    // gecikse bile HER ZAMAN doğru görünsün; canlı skoru ise sadece
-    // status.json bilebilir (gerçek Maçkolik verisi orada).
+    // status.json (Actions çalıştırma sonucu - poll sayısı, log, son çalışma
+    // zamanı) ve runtime_config.json (anlık watchlist ayarı) İKİ AYRI
+    // kaynak: status.json sadece bulut çalıştıkça güncellenir, ama
+    // runtime_config.json panelden değiştirilir değişmez günceldir. "İzlenen
+    // Maçlar" kartını runtime_config.json'dan okuyoruz ki cron gecikse/
+    // çalışmasa bile aktif/pasif durumu HER ZAMAN doğru görünsün.
     let watchlist = null;
     try {
       const { content } = await getRuntimeConfig();
       watchlist = content.watchlist;
+      renderMatches(watchlist);
     } catch (e) {
       document.getElementById('matches').innerHTML = `<div class="error-msg">Veri alınamadı: ${escapeHtml(e.message)}</div>`;
     }
@@ -644,15 +630,11 @@
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const status = await res.json();
       lastStatus = status;
-      const scoreMap = {};
-      (status.watchlist || []).forEach(m => { if (m.score) scoreMap[m.match_id] = m.score; });
       renderBadges(status, false);
       renderStats(status, watchlist || status.watchlist);
-      renderMatches(watchlist || status.watchlist, scoreMap);
       renderLog(status);
       renderDangerZone();
     } catch (e) {
-      if (watchlist) renderMatches(watchlist, null);
       renderBadges({}, true);
       document.getElementById('log').innerHTML = `<div class="error-msg">Veri alınamadı: ${escapeHtml(e.message)}</div>`;
     }

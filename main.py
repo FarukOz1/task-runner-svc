@@ -42,7 +42,7 @@ def run_once(dry_run: bool) -> None:
         if not match.active:
             continue
 
-        new_goals = find_new_goals(match.match_id, match.home, match.away, match.hashtags)
+        new_goals, _ = find_new_goals(match.match_id, match.home, match.away, match.hashtags)
 
         for event in new_goals:
             tweet_text = build_goal_tweet(event)

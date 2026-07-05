@@ -48,15 +48,24 @@ jobs:
 
           # Panel/elle push'lar veya çakışan başka bir çalıştırma yüzünden
           # remote ilerlemiş olabilir - push başarısız olursa en güncel
-          # remote'un üzerine (kendi state'imizi kaybetmeden) yeniden dene.
+          # remote'un üzerine yeniden dene. ÖNEMLİ: "reset --hard origin/main"
+          # kullanıyoruz (soft değil) ki kod dosyaları (cloud_runner.py vb.)
+          # HER ZAMAN remote'daki en güncel haliyle eşleşsin - sadece
+          # nebulalive.db/status.json'ı yedekten geri yükleyip yeniden
+          # commit'liyoruz. Bu, eski/çakışan bir çalıştırmanın kod
+          # dosyalarını yanlışlıkla eski sürüme döndürmesini engeller.
           for i in 1 2 3 4 5; do
             if git push; then
               echo "Push başarılı (deneme $i)."
               exit 0
             fi
             echo "Push başarısız (deneme $i), remote'a göre yeniden deneniyor..."
+            cp nebulalive.db /tmp/nebulalive.db.bak
+            cp status.json /tmp/status.json.bak
             git fetch origin main
-            git reset --soft origin/main
+            git reset --hard origin/main
+            cp /tmp/nebulalive.db.bak nebulalive.db
+            cp /tmp/status.json.bak status.json
             git add nebulalive.db status.json
             git commit -m "state güncelle [skip ci]"
             sleep 3

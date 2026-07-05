@@ -43,16 +43,18 @@ def _log(log: list, level: str, message: str) -> None:
     print(f"[{level.upper()}] {message}", flush=True)
 
 
-def _poll_once(log: list) -> None:
+def _poll_once(log: list, live_scores: dict) -> None:
     for match in WATCHLIST:
         if not match.active:
             continue
 
         try:
-            new_goals = find_new_goals(match.match_id, match.home, match.away, match.hashtags)
+            new_goals, current_score = find_new_goals(match.match_id, match.home, match.away, match.hashtags)
         except Exception as e:
             _log(log, "error", f"{match.home} - {match.away}: {type(e).__name__}: {e}")
             continue
+
+        live_scores[match.match_id] = current_score
 
         if not new_goals:
             _log(log, "info", f"{match.home} - {match.away}: kontrol edildi, değişiklik yok")
@@ -76,7 +78,7 @@ def _poll_once(log: list) -> None:
                     _log(log, "error", f"X'e paylaşılamadı: {e}")
 
 
-def _write_status(log: list, poll_count: int, run_started_at: str) -> None:
+def _write_status(log: list, poll_count: int, run_started_at: str, live_scores: dict) -> None:
     status = {
         "last_updated": _now_iso(),
         "run_started_at": run_started_at,
@@ -84,7 +86,14 @@ def _write_status(log: list, poll_count: int, run_started_at: str) -> None:
         "poll_count": poll_count,
         "dry_run": DRY_RUN_CLOUD,
         "watchlist": [
-            {"match_id": m.match_id, "home": m.home, "away": m.away, "active": m.active, "hashtags": m.hashtags}
+            {
+                "match_id": m.match_id,
+                "home": m.home,
+                "away": m.away,
+                "active": m.active,
+                "hashtags": m.hashtags,
+                "score": live_scores.get(m.match_id),
+            }
             for m in WATCHLIST
         ],
         "recent_log": log[-MAX_LOG_ENTRIES:],
@@ -96,6 +105,7 @@ def _write_status(log: list, poll_count: int, run_started_at: str) -> None:
 def main() -> None:
     init_db()
     log: list = []
+    live_scores: dict = {}
     run_started_at = _now_iso()
     start = time.monotonic()
     cycle = 0
@@ -103,13 +113,13 @@ def main() -> None:
     while time.monotonic() - start < RUN_DURATION_SECONDS:
         cycle += 1
         try:
-            _poll_once(log)
+            _poll_once(log, live_scores)
         except Exception as e:
             _log(log, "error", f"cloud_runner döngü {cycle}: {type(e).__name__}: {e}")
-        _write_status(log, cycle, run_started_at)
+        _write_status(log, cycle, run_started_at, live_scores)
         time.sleep(POLL_INTERVAL_SECONDS)
 
-    _write_status(log, cycle, run_started_at)
+    _write_status(log, cycle, run_started_at, live_scores)
     print(f"[BILGI] cloud_runner tamamlandi ({cycle} kontrol yapildi).", flush=True)
 
 

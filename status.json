@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-07T15:23:45Z",
-  "run_started_at": "2026-09-07T15:20:35Z",
+  "last_updated": "2026-09-07T15:28:33Z",
+  "run_started_at": "2026-09-07T15:25:24Z",
   "poll_interval_seconds": 15,
   "poll_count": 12,
   "dry_run": true,
@@ -40,182 +40,182 @@
   ],
   "recent_log": [
     {
-      "time": "2026-09-07T15:20:36Z",
+      "time": "2026-09-07T15:25:25Z",
       "level": "error",
       "message": "Istanbulspor - Iğdır Fk: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:20:36Z",
+      "time": "2026-09-07T15:25:26Z",
       "level": "error",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:20:37Z",
+      "time": "2026-09-07T15:25:27Z",
       "level": "error",
       "message": "Esenler Erokspor - Kayserispor: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:20:53Z",
+      "time": "2026-09-07T15:25:42Z",
       "level": "error",
       "message": "Istanbulspor - Iğdır Fk: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:20:53Z",
+      "time": "2026-09-07T15:25:42Z",
       "level": "error",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:20:53Z",
+      "time": "2026-09-07T15:25:42Z",
       "level": "error",
       "message": "Esenler Erokspor - Kayserispor: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:21:09Z",
+      "time": "2026-09-07T15:25:58Z",
       "level": "error",
       "message": "Istanbulspor - Iğdır Fk: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:21:09Z",
+      "time": "2026-09-07T15:25:58Z",
       "level": "error",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:21:09Z",
+      "time": "2026-09-07T15:25:58Z",
       "level": "error",
       "message": "Esenler Erokspor - Kayserispor: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:21:25Z",
+      "time": "2026-09-07T15:26:13Z",
       "level": "error",
       "message": "Istanbulspor - Iğdır Fk: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:21:25Z",
+      "time": "2026-09-07T15:26:14Z",
       "level": "error",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:21:25Z",
+      "time": "2026-09-07T15:26:14Z",
       "level": "error",
       "message": "Esenler Erokspor - Kayserispor: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:21:40Z",
+      "time": "2026-09-07T15:26:29Z",
       "level": "error",
       "message": "Istanbulspor - Iğdır Fk: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:21:40Z",
+      "time": "2026-09-07T15:26:29Z",
       "level": "error",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:21:41Z",
+      "time": "2026-09-07T15:26:30Z",
       "level": "error",
       "message": "Esenler Erokspor - Kayserispor: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:21:56Z",
+      "time": "2026-09-07T15:26:45Z",
       "level": "error",
       "message": "Istanbulspor - Iğdır Fk: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:21:56Z",
+      "time": "2026-09-07T15:26:45Z",
       "level": "error",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:21:56Z",
+      "time": "2026-09-07T15:26:45Z",
       "level": "error",
       "message": "Esenler Erokspor - Kayserispor: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:22:11Z",
+      "time": "2026-09-07T15:27:00Z",
       "level": "error",
       "message": "Istanbulspor - Iğdır Fk: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:22:12Z",
+      "time": "2026-09-07T15:27:00Z",
       "level": "error",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:22:12Z",
+      "time": "2026-09-07T15:27:00Z",
       "level": "error",
       "message": "Esenler Erokspor - Kayserispor: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:22:27Z",
+      "time": "2026-09-07T15:27:16Z",
       "level": "error",
       "message": "Istanbulspor - Iğdır Fk: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:22:28Z",
+      "time": "2026-09-07T15:27:16Z",
       "level": "error",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:22:28Z",
+      "time": "2026-09-07T15:27:16Z",
       "level": "error",
       "message": "Esenler Erokspor - Kayserispor: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:22:43Z",
+      "time": "2026-09-07T15:27:31Z",
       "level": "error",
       "message": "Istanbulspor - Iğdır Fk: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:22:44Z",
+      "time": "2026-09-07T15:27:31Z",
       "level": "error",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:22:44Z",
+      "time": "2026-09-07T15:27:31Z",
       "level": "error",
       "message": "Esenler Erokspor - Kayserispor: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:22:59Z",
+      "time": "2026-09-07T15:27:46Z",
       "level": "error",
       "message": "Istanbulspor - Iğdır Fk: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:22:59Z",
+      "time": "2026-09-07T15:27:46Z",
       "level": "error",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:22:59Z",
+      "time": "2026-09-07T15:27:47Z",
       "level": "error",
       "message": "Esenler Erokspor - Kayserispor: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:23:14Z",
+      "time": "2026-09-07T15:28:02Z",
       "level": "error",
       "message": "Istanbulspor - Iğdır Fk: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:23:14Z",
+      "time": "2026-09-07T15:28:02Z",
       "level": "error",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:23:15Z",
+      "time": "2026-09-07T15:28:02Z",
       "level": "error",
       "message": "Esenler Erokspor - Kayserispor: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:23:30Z",
+      "time": "2026-09-07T15:28:17Z",
       "level": "error",
       "message": "Istanbulspor - Iğdır Fk: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:23:30Z",
+      "time": "2026-09-07T15:28:17Z",
       "level": "error",
       "message": "Kuzey Kore U20 K - Portekiz U20 K: ValueError: not enough values to unpack (expected 2, got 0)"
     },
     {
-      "time": "2026-09-07T15:23:30Z",
+      "time": "2026-09-07T15:28:18Z",
       "level": "error",
       "message": "Esenler Erokspor - Kayserispor: ValueError: not enough values to unpack (expected 2, got 0)"
     }

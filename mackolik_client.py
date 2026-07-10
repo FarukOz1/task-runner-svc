@@ -54,18 +54,26 @@ class KeyEvent:
         return self.type == "goal"
 
 
+@dataclass
+class KeyEventsResult:
+    events: list[KeyEvent]
+    match_start_time: Optional[int]  # epoch ms (maç başlama saati - canlı dakika hesabı için)
+    match_state: Optional[str]       # "liveGame", "postGame" vb.
+
+
 def _session() -> requests.Session:
     s = requests.Session()
     s.headers.update({"User-Agent": USER_AGENT})
     return s
 
 
-def fetch_key_events(match_id: str) -> list[KeyEvent]:
+def fetch_key_events(match_id: str) -> KeyEventsResult:
     """
-    Belirtilen maçın olay listesini (gol, kart, değişiklik...) çeker.
-    Liste, maçın başından o ana kadar olan TÜM olayları içerir - yani her
-    çağrıda tam liste gelir, sadece "yeni" olanlar değil. Dedup işini
-    event_detector.py / state_store.py yapar.
+    Belirtilen maçın olay listesini (gol, kart, değişiklik...) ve maç
+    başlama saatini (canlı dakika hesabı için) çeker. Olay listesi, maçın
+    başından o ana kadar olan TÜM olayları içerir - yani her çağrıda tam
+    liste gelir, sadece "yeni" olanlar değil. Dedup işini event_detector.py
+    / state_store.py yapar.
     """
     params = {"ajaxViewName": "events", "matchId": match_id}
     try:
@@ -86,7 +94,8 @@ def fetch_key_events(match_id: str) -> list[KeyEvent]:
     if payload.get("status") != "success":
         raise MackolikClientError(f"key-events başarısız durum döndü: {payload}")
 
-    raw_events = payload.get("data", {}).get("keyEvents", [])
+    data = payload.get("data", {})
+    raw_events = data.get("keyEvents", [])
 
     events = []
     for e in raw_events:
@@ -101,7 +110,11 @@ def fetch_key_events(match_id: str) -> list[KeyEvent]:
                 raw=e,
             )
         )
-    return events
+    return KeyEventsResult(
+        events=events,
+        match_start_time=data.get("matchStartTime"),
+        match_state=data.get("matchState"),
+    )
 
 
 def fetch_match_state(match_id: str) -> dict:
@@ -138,7 +151,9 @@ if __name__ == "__main__":
 
     test_match_id = sys.argv[1] if len(sys.argv) > 1 else "996prqhfc4sm6szbpqclc3jmc"
     print(f"key-events testi (matchId={test_match_id}):\n")
-    for ev in fetch_key_events(test_match_id):
+    result = fetch_key_events(test_match_id)
+    for ev in result.events:
         print(ev)
+    print(f"\nmatch_start_time: {result.match_start_time}, match_state: {result.match_state}")
     print("\ngameStats testi:\n")
     print(fetch_match_state(test_match_id))

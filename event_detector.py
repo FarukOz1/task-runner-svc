@@ -17,6 +17,7 @@ Eski (v1) skor-diff mantığına göre çok daha güvenilir çünkü API bize za
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import Optional
 
 from mackolik_client import KeyEvent, fetch_key_events, MackolikClientError
 from state_store import is_event_published
@@ -44,19 +45,21 @@ def _make_event_id(match_id: str, ev: KeyEvent) -> str:
     return f"{match_id}-{ev.time_min}-{ev.score}"
 
 
-def find_new_goals(match_id: str, home_name: str, away_name: str, hashtags: str = "") -> tuple[list[GoalEvent], str]:
+def find_new_goals(match_id: str, home_name: str, away_name: str, hashtags: str = "") -> tuple[list[GoalEvent], str, Optional[int]]:
     """
     Maçın güncel key-events listesini çeker, henüz paylaşılmamış gol
-    event'lerini ve maçın GÜNCEL SKORUNU döner (canlı panelde göstermek için).
-    Birden fazla yeni gol varsa (ör. worker bir süre çalışmadıysa) hepsini
-    sırayla döner. Hiç gol yoksa skor "0-0" olarak döner.
+    event'lerini, maçın GÜNCEL SKORUNU ve BAŞLAMA SAATİNİ (epoch ms) döner
+    (canlı panelde skor + dakika göstermek için). Birden fazla yeni gol
+    varsa (ör. worker bir süre çalışmadıysa) hepsini sırayla döner. Hiç gol
+    yoksa skor "0-0" olarak döner.
     """
     try:
-        events = fetch_key_events(match_id)
+        result = fetch_key_events(match_id)
     except MackolikClientError as e:
         print(f"[HATA] key-events çekilemedi (match_id={match_id}): {e}")
-        return [], "0-0"
+        return [], "0-0", None
 
+    events = result.events
     new_goals: list[GoalEvent] = []
     current_score = "0-0"
     for ev in events:
@@ -97,4 +100,4 @@ def find_new_goals(match_id: str, home_name: str, away_name: str, hashtags: str 
             )
         )
 
-    return new_goals, current_score
+    return new_goals, current_score, result.match_start_time

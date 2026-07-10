@@ -234,14 +234,45 @@
 
   .match-card .teams .vs { color: var(--text-2); font-weight: 500; padding: 0 8px; font-size: 12px; }
 
-  .live-score {
+  .scoreboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 4px 0 10px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(52,211,153,0.10), rgba(34,211,238,0.06));
+    border: 1px solid rgba(52,211,153,0.25);
+  }
+
+  .sb-digits {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
+    letter-spacing: 2px;
     color: var(--live);
-    text-align: center;
-    margin-bottom: 8px;
-    letter-spacing: 1px;
+    text-shadow: 0 0 14px rgba(52,211,153,0.45);
+  }
+  .sb-digits .sb-dash { color: var(--text-2); font-weight: 500; padding: 0 4px; }
+
+  .sb-minute {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--err);
+    background: rgba(251,113,133,0.12);
+    border: 1px solid rgba(251,113,133,0.3);
+    border-radius: 999px;
+    padding: 4px 10px;
+  }
+  .sb-minute .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: currentColor; box-shadow: 0 0 6px currentColor;
+    animation: pulse 1.6s ease-in-out infinite;
   }
 
   .match-card .meta {
@@ -574,7 +605,14 @@
     ).join('');
   }
 
-  function renderMatches(watchlist, scoreMap) {
+  function formatMinute(startMs) {
+    if (!startMs) return null;
+    const elapsed = Math.floor((Date.now() - startMs) / 60000);
+    if (elapsed < 0) return "başlamadı";
+    return elapsed + "'";
+  }
+
+  function renderMatches(watchlist, matchDataMap) {
     const el = document.getElementById('matches');
     document.getElementById('match-count').textContent = `(${watchlist.length})`;
     if (!watchlist.length) {
@@ -582,7 +620,19 @@
       return;
     }
     el.innerHTML = watchlist.map(m => {
-      const score = scoreMap ? scoreMap[m.match_id] : null;
+      const d = matchDataMap ? matchDataMap[m.match_id] : null;
+      const score = d ? d.score : null;
+      const startMs = d ? d.match_start_time : null;
+      let scoreboard = '';
+      if (m.active && score) {
+        const parts = score.split('-');
+        const minuteText = formatMinute(startMs);
+        scoreboard = `
+          <div class="scoreboard">
+            <div class="sb-digits">${escapeHtml(parts[0] || '0')}<span class="sb-dash">-</span>${escapeHtml(parts[1] || '0')}</div>
+            ${startMs ? `<div class="sb-minute" data-start-ms="${startMs}"><span class="dot"></span><span class="min-text">${minuteText || ''}</span></div>` : ''}
+          </div>`;
+      }
       return `
       <div class="match-card">
         <div class="teams">
@@ -590,7 +640,7 @@
           <span class="vs">vs</span>
           <span>${escapeHtml(m.away)}</span>
         </div>
-        ${m.active && score ? `<div class="live-score">${escapeHtml(score)}</div>` : ''}
+        ${scoreboard}
         <div class="meta">
           <span class="mid">${escapeHtml(m.match_id)}</span>
           <span class="pill ${m.active ? 'active' : 'inactive'}">${m.active ? 'İzleniyor' : 'Pasif'}</span>
@@ -599,6 +649,15 @@
     `;
     }).join('');
   }
+
+  function tickMinutes() {
+    document.querySelectorAll('.sb-minute').forEach(el => {
+      const startMs = parseInt(el.dataset.startMs, 10);
+      const span = el.querySelector('.min-text');
+      if (span && startMs) span.textContent = formatMinute(startMs) || '';
+    });
+  }
+  setInterval(tickMinutes, 1000);
 
   function renderLog(status) {
     const el = document.getElementById('log');
@@ -643,11 +702,13 @@
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const status = await res.json();
       lastStatus = status;
-      const scoreMap = {};
-      (status.watchlist || []).forEach(m => { if (m.score) scoreMap[m.match_id] = m.score; });
+      const matchDataMap = {};
+      (status.watchlist || []).forEach(m => {
+        matchDataMap[m.match_id] = { score: m.score, match_start_time: m.match_start_time };
+      });
       renderBadges(status, false);
       renderStats(status, watchlist || status.watchlist);
-      renderMatches(watchlist || status.watchlist, scoreMap);
+      renderMatches(watchlist || status.watchlist, matchDataMap);
       renderLog(status);
       renderDangerZone();
     } catch (e) {

@@ -274,6 +274,11 @@
     background: currentColor; box-shadow: 0 0 6px currentColor;
     animation: pulse 1.6s ease-in-out infinite;
   }
+  .sb-minute.sb-finished {
+    color: var(--text-2);
+    background: rgba(255,255,255,0.05);
+    border-color: var(--border);
+  }
 
   .match-card .meta {
     display: flex;
@@ -623,14 +628,18 @@
       const d = matchDataMap ? matchDataMap[m.match_id] : null;
       const score = d ? d.score : null;
       const startMs = d ? d.match_start_time : null;
+      const finished = d ? d.match_state === 'postGame' : false;
       let scoreboard = '';
       if (m.active && score) {
         const parts = score.split('-');
         const minuteText = formatMinute(startMs);
+        const rightBadge = finished
+          ? `<div class="sb-minute sb-finished">MS</div>`
+          : (startMs ? `<div class="sb-minute" data-start-ms="${startMs}"><span class="dot"></span><span class="min-text">${minuteText || ''}</span></div>` : '');
         scoreboard = `
           <div class="scoreboard">
             <div class="sb-digits">${escapeHtml(parts[0] || '0')}<span class="sb-dash">-</span>${escapeHtml(parts[1] || '0')}</div>
-            ${startMs ? `<div class="sb-minute" data-start-ms="${startMs}"><span class="dot"></span><span class="min-text">${minuteText || ''}</span></div>` : ''}
+            ${rightBadge}
           </div>`;
       }
       return `
@@ -704,7 +713,7 @@
       lastStatus = status;
       const matchDataMap = {};
       (status.watchlist || []).forEach(m => {
-        matchDataMap[m.match_id] = { score: m.score, match_start_time: m.match_start_time };
+        matchDataMap[m.match_id] = { score: m.score, match_start_time: m.match_start_time, match_state: m.match_state };
       });
       renderBadges(status, false);
       renderStats(status, watchlist || status.watchlist);

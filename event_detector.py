@@ -45,19 +45,20 @@ def _make_event_id(match_id: str, ev: KeyEvent) -> str:
     return f"{match_id}-{ev.time_min}-{ev.score}"
 
 
-def find_new_goals(match_id: str, home_name: str, away_name: str, hashtags: str = "") -> tuple[list[GoalEvent], str, Optional[int]]:
+def find_new_goals(match_id: str, home_name: str, away_name: str, hashtags: str = "") -> tuple[list[GoalEvent], str, Optional[int], Optional[str]]:
     """
     Maçın güncel key-events listesini çeker, henüz paylaşılmamış gol
-    event'lerini, maçın GÜNCEL SKORUNU ve BAŞLAMA SAATİNİ (epoch ms) döner
-    (canlı panelde skor + dakika göstermek için). Birden fazla yeni gol
-    varsa (ör. worker bir süre çalışmadıysa) hepsini sırayla döner. Hiç gol
-    yoksa skor "0-0" olarak döner.
+    event'lerini, maçın GÜNCEL SKORUNU, BAŞLAMA SAATİNİ (epoch ms) ve
+    DURUMUNU ("liveGame"/"postGame") döner (canlı panelde skor + dakika +
+    "Maç Sonu" rozeti göstermek için). Birden fazla yeni gol varsa (ör.
+    worker bir süre çalışmadıysa) hepsini sırayla döner. Hiç gol yoksa skor
+    "0-0" olarak döner.
     """
     try:
         result = fetch_key_events(match_id)
     except MackolikClientError as e:
         print(f"[HATA] key-events çekilemedi (match_id={match_id}): {e}")
-        return [], "0-0", None
+        return [], "0-0", None, None
 
     events = result.events
     new_goals: list[GoalEvent] = []
@@ -100,4 +101,4 @@ def find_new_goals(match_id: str, home_name: str, away_name: str, hashtags: str 
             )
         )
 
-    return new_goals, current_score, result.match_start_time
+    return new_goals, current_score, result.match_start_time, result.match_state

@@ -38,12 +38,23 @@ def _now_iso() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
 
 
+def _compute_minute(match_start_time_ms: int) -> int:
+    """
+    Maçkolik'te ayrı bir "şu an kaçıncı dakika" alanı yok - sadece maç
+    başlama saati var. Devre arası/uzatma dakikalarını ayırt etmeden,
+    başlangıçtan bu yana geçen dakikayı hesaplıyoruz (yaklaşık).
+    """
+    now_ms = datetime.now(timezone.utc).timestamp() * 1000
+    minute = int((now_ms - match_start_time_ms) // 60000)
+    return max(minute, 0)
+
+
 def _log(log: list, level: str, message: str) -> None:
     log.append({"time": _now_iso(), "level": level, "message": message})
     print(f"[{level.upper()}] {message}", flush=True)
 
 
-def _poll_once(log: list, live_scores: dict, match_start_times: dict, match_states: dict) -> None:
+def _poll_once(log: list, live_scores: dict, match_start_times: dict, match_states: dict, live_minutes: dict) -> None:
     for match in WATCHLIST:
         if not match.active:
             continue
@@ -57,6 +68,7 @@ def _poll_once(log: list, live_scores: dict, match_start_times: dict, match_stat
         live_scores[match.match_id] = current_score
         if start_time is not None:
             match_start_times[match.match_id] = start_time
+            live_minutes[match.match_id] = _compute_minute(start_time)
         if match_state is not None:
             match_states[match.match_id] = match_state
 
@@ -82,7 +94,7 @@ def _poll_once(log: list, live_scores: dict, match_start_times: dict, match_stat
                     _log(log, "error", f"X'e paylaşılamadı: {e}")
 
 
-def _write_status(log: list, poll_count: int, run_started_at: str, live_scores: dict, match_start_times: dict, match_states: dict) -> None:
+def _write_status(log: list, poll_count: int, run_started_at: str, live_scores: dict, match_start_times: dict, match_states: dict, live_minutes: dict) -> None:
     status = {
         "last_updated": _now_iso(),
         "run_started_at": run_started_at,
@@ -99,6 +111,7 @@ def _write_status(log: list, poll_count: int, run_started_at: str, live_scores: 
                 "score": live_scores.get(m.match_id),
                 "match_start_time": match_start_times.get(m.match_id),
                 "match_state": match_states.get(m.match_id),
+                "minute": live_minutes.get(m.match_id),
             }
             for m in WATCHLIST
         ],
@@ -114,6 +127,7 @@ def main() -> None:
     live_scores: dict = {}
     match_start_times: dict = {}
     match_states: dict = {}
+    live_minutes: dict = {}
     run_started_at = _now_iso()
     start = time.monotonic()
     cycle = 0
@@ -121,13 +135,13 @@ def main() -> None:
     while time.monotonic() - start < RUN_DURATION_SECONDS:
         cycle += 1
         try:
-            _poll_once(log, live_scores, match_start_times, match_states)
+            _poll_once(log, live_scores, match_start_times, match_states, live_minutes)
         except Exception as e:
             _log(log, "error", f"cloud_runner döngü {cycle}: {type(e).__name__}: {e}")
-        _write_status(log, cycle, run_started_at, live_scores, match_start_times, match_states)
+        _write_status(log, cycle, run_started_at, live_scores, match_start_times, match_states, live_minutes)
         time.sleep(POLL_INTERVAL_SECONDS)
 
-    _write_status(log, cycle, run_started_at, live_scores, match_start_times, match_states)
+    _write_status(log, cycle, run_started_at, live_scores, match_start_times, match_states, live_minutes)
     print(f"[BILGI] cloud_runner tamamlandi ({cycle} kontrol yapildi).", flush=True)
 
 

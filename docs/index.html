@@ -632,7 +632,11 @@
       let scoreboard = '';
       if (m.active && score) {
         const parts = score.split('-');
-        const minuteText = formatMinute(startMs);
+        // Sunucu (cloud_runner.py) skoru her çektiğinde dakikayı da hesaplayıp
+        // status.json'a yazıyor - ilk gösterimde bunu doğrudan kullanıyoruz,
+        // aradaki bekleme sürelerinde akıcı görünmesi için saniyede bir
+        // istemci tarafında (aynı formülle) ilerletiyoruz.
+        const minuteText = (d && d.minute != null) ? (d.minute + "'") : formatMinute(startMs);
         const rightBadge = finished
           ? `<div class="sb-minute sb-finished">MS</div>`
           : (startMs ? `<div class="sb-minute" data-start-ms="${startMs}"><span class="dot"></span><span class="min-text">${minuteText || ''}</span></div>` : '');
@@ -713,7 +717,7 @@
       lastStatus = status;
       const matchDataMap = {};
       (status.watchlist || []).forEach(m => {
-        matchDataMap[m.match_id] = { score: m.score, match_start_time: m.match_start_time, match_state: m.match_state };
+        matchDataMap[m.match_id] = { score: m.score, match_start_time: m.match_start_time, match_state: m.match_state, minute: m.minute };
       });
       renderBadges(status, false);
       renderStats(status, watchlist || status.watchlist);

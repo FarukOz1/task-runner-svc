@@ -28,10 +28,10 @@ jobs:
 
       - name: Maçları kontrol et (~4.5 dakika, 15sn aralıklarla)
         env:
-          X_API_KEY: ${{ secrets.X_API_KEY }}
-          X_API_SECRET: ${{ secrets.X_API_SECRET }}
-          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          X_OAUTH2_CLIENT_ID: ${{ secrets.X_OAUTH2_CLIENT_ID }}
+          X_OAUTH2_CLIENT_SECRET: ${{ secrets.X_OAUTH2_CLIENT_SECRET }}
+          X_OAUTH2_REFRESH_TOKEN: ${{ secrets.X_OAUTH2_REFRESH_TOKEN }}
+          SECRETS_MANAGER_PAT: ${{ secrets.SECRETS_MANAGER_PAT }}
         run: python cloud_runner.py
 
       - name: Durumu (dedup DB + panel verisi) commit'le

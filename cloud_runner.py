@@ -54,7 +54,19 @@ def _log(log: list, level: str, message: str) -> None:
     print(f"[{level.upper()}] {message}", flush=True)
 
 
-def _poll_once(log: list, live_scores: dict, match_start_times: dict, match_states: dict, live_minutes: dict) -> None:
+def _get_access_token_cached(cache: dict) -> str:
+    """
+    Bir çalıştırma (run) boyunca en fazla BİR KEZ token yeniler (refresh_token
+    tek kullanımlık olduğu için birden fazla golde tekrar tekrar yenilemek
+    onu boşa harcar/bozar). İlk çağrıda yeniler, sonrakilerde önbellekten döner.
+    """
+    if "token" not in cache:
+        from x_publisher import get_fresh_access_token
+        cache["token"] = get_fresh_access_token()
+    return cache["token"]
+
+
+def _poll_once(log: list, live_scores: dict, match_start_times: dict, match_states: dict, live_minutes: dict, access_token_cache: dict) -> None:
     for match in WATCHLIST:
         if not match.active:
             continue
@@ -87,7 +99,8 @@ def _poll_once(log: list, live_scores: dict, match_start_times: dict, match_stat
                 from x_publisher import publish_goal_post, XPublisherError
 
                 try:
-                    tweet_id = publish_goal_post(tweet_text, video_path=GOAL_VIDEO_PATH)
+                    access_token = _get_access_token_cached(access_token_cache)
+                    tweet_id = publish_goal_post(tweet_text, video_path=GOAL_VIDEO_PATH, access_token=access_token)
                     mark_event_published(event.event_id, event.match_id, "GOAL", tweet_id=tweet_id)
                     _log(log, "success", f"Tweet paylaşıldı: {tweet_id}")
                 except XPublisherError as e:
@@ -128,6 +141,7 @@ def main() -> None:
     match_start_times: dict = {}
     match_states: dict = {}
     live_minutes: dict = {}
+    access_token_cache: dict = {}
     run_started_at = _now_iso()
     start = time.monotonic()
     cycle = 0
@@ -135,7 +149,7 @@ def main() -> None:
     while time.monotonic() - start < RUN_DURATION_SECONDS:
         cycle += 1
         try:
-            _poll_once(log, live_scores, match_start_times, match_states, live_minutes)
+            _poll_once(log, live_scores, match_start_times, match_states, live_minutes, access_token_cache)
         except Exception as e:
             _log(log, "error", f"cloud_runner döngü {cycle}: {type(e).__name__}: {e}")
         _write_status(log, cycle, run_started_at, live_scores, match_start_times, match_states, live_minutes)

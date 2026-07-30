@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-07T16:43:37Z",
-  "run_started_at": "2026-09-07T16:40:31Z",
+  "last_updated": "2026-09-07T18:53:14Z",
+  "run_started_at": "2026-09-07T18:50:09Z",
   "poll_interval_seconds": 15,
   "poll_count": 12,
   "dry_run": true,
@@ -11,70 +11,75 @@
       "away": "Alanyaspor",
       "active": true,
       "hashtags": "",
-      "score": "0-0",
+      "score": "0-1",
       "match_start_time": 1788800400000,
-      "match_state": "preGame",
-      "minute": 0
+      "match_state": "postGame",
+      "minute": 112
     }
   ],
   "recent_log": [
     {
-      "time": "2026-09-07T16:40:33Z",
+      "time": "2026-09-07T18:50:11Z",
+      "level": "goal",
+      "message": "GOL! Çaykur Rizespor 0-1 Alanyaspor (70') - Z. Ariss"
+    },
+    {
+      "time": "2026-09-07T18:50:11Z",
+      "level": "info",
+      "message": "[DRY-RUN] X'e gönderilmedi (test modu)"
+    },
+    {
+      "time": "2026-09-07T18:50:26Z",
       "level": "info",
       "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T16:40:48Z",
+      "time": "2026-09-07T18:50:42Z",
       "level": "info",
       "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T16:41:04Z",
+      "time": "2026-09-07T18:50:57Z",
       "level": "info",
       "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T16:41:19Z",
+      "time": "2026-09-07T18:51:13Z",
       "level": "info",
       "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T16:41:35Z",
+      "time": "2026-09-07T18:51:28Z",
       "level": "info",
       "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T16:41:50Z",
+      "time": "2026-09-07T18:51:43Z",
       "level": "info",
       "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T16:42:05Z",
+      "time": "2026-09-07T18:51:58Z",
       "level": "info",
       "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T16:42:21Z",
+      "time": "2026-09-07T18:52:14Z",
       "level": "info",
       "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T16:42:36Z",
+      "time": "2026-09-07T18:52:29Z",
       "level": "info",
       "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T16:42:51Z",
+      "time": "2026-09-07T18:52:44Z",
       "level": "info",
       "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T16:43:06Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T16:43:22Z",
+      "time": "2026-09-07T18:52:59Z",
       "level": "info",
       "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
     }

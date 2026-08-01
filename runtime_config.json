@@ -1,5 +1,5 @@
 {
-  "dry_run": true,
+  "dry_run": false,
   "watchlist": [
     {
       "match_id": "cd0r0kivu25m8102kjxaran10",

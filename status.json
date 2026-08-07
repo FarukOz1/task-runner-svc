@@ -1,82 +1,262 @@
 {
-  "last_updated": "2026-09-07T20:44:58Z",
-  "run_started_at": "2026-09-07T20:41:53Z",
+  "last_updated": "2026-09-07T20:49:24Z",
+  "run_started_at": "2026-09-07T20:46:17Z",
   "poll_interval_seconds": 15,
   "poll_count": 12,
   "dry_run": false,
   "watchlist": [
     {
-      "match_id": "cd0r0kivu25m8102kjxaran10",
-      "home": "Çaykur Rizespor",
-      "away": "Alanyaspor",
+      "match_id": "7a2nfmhdemats7gw8rjcxitck",
+      "home": "Elche",
+      "away": "Real Sociedad",
       "active": true,
       "hashtags": "",
-      "score": "0-1",
-      "match_start_time": 1788800400000,
-      "match_state": "postGame",
-      "minute": 224
+      "score": "0-2",
+      "match_start_time": 1788809400000,
+      "match_state": "liveGame",
+      "minute": 79
     }
   ],
   "recent_log": [
     {
-      "time": "2026-09-07T20:41:55Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
+      "time": "2026-09-07T20:46:19Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-1 Real Sociedad (11') - J. Ochieng"
     },
     {
-      "time": "2026-09-07T20:42:10Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
+      "time": "2026-09-07T20:46:19Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
     },
     {
-      "time": "2026-09-07T20:42:25Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
+      "time": "2026-09-07T20:46:19Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-2 Real Sociedad (32') - Y. Herrera"
     },
     {
-      "time": "2026-09-07T20:42:41Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
+      "time": "2026-09-07T20:46:19Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
     },
     {
-      "time": "2026-09-07T20:42:56Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
+      "time": "2026-09-07T20:46:34Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-1 Real Sociedad (11') - J. Ochieng"
     },
     {
-      "time": "2026-09-07T20:43:11Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
+      "time": "2026-09-07T20:46:34Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
     },
     {
-      "time": "2026-09-07T20:43:27Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
+      "time": "2026-09-07T20:46:34Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-2 Real Sociedad (32') - Y. Herrera"
     },
     {
-      "time": "2026-09-07T20:43:42Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
+      "time": "2026-09-07T20:46:34Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
     },
     {
-      "time": "2026-09-07T20:43:57Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
+      "time": "2026-09-07T20:46:50Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-1 Real Sociedad (11') - J. Ochieng"
     },
     {
-      "time": "2026-09-07T20:44:12Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
+      "time": "2026-09-07T20:46:50Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
     },
     {
-      "time": "2026-09-07T20:44:28Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
+      "time": "2026-09-07T20:46:50Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-2 Real Sociedad (32') - Y. Herrera"
     },
     {
-      "time": "2026-09-07T20:44:43Z",
-      "level": "info",
-      "message": "Çaykur Rizespor - Alanyaspor: kontrol edildi, değişiklik yok"
+      "time": "2026-09-07T20:46:50Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
+    },
+    {
+      "time": "2026-09-07T20:47:05Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-1 Real Sociedad (11') - J. Ochieng"
+    },
+    {
+      "time": "2026-09-07T20:47:05Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
+    },
+    {
+      "time": "2026-09-07T20:47:05Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-2 Real Sociedad (32') - Y. Herrera"
+    },
+    {
+      "time": "2026-09-07T20:47:05Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
+    },
+    {
+      "time": "2026-09-07T20:47:21Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-1 Real Sociedad (11') - J. Ochieng"
+    },
+    {
+      "time": "2026-09-07T20:47:21Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
+    },
+    {
+      "time": "2026-09-07T20:47:21Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-2 Real Sociedad (32') - Y. Herrera"
+    },
+    {
+      "time": "2026-09-07T20:47:21Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
+    },
+    {
+      "time": "2026-09-07T20:47:36Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-1 Real Sociedad (11') - J. Ochieng"
+    },
+    {
+      "time": "2026-09-07T20:47:36Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
+    },
+    {
+      "time": "2026-09-07T20:47:36Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-2 Real Sociedad (32') - Y. Herrera"
+    },
+    {
+      "time": "2026-09-07T20:47:36Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
+    },
+    {
+      "time": "2026-09-07T20:47:51Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-1 Real Sociedad (11') - J. Ochieng"
+    },
+    {
+      "time": "2026-09-07T20:47:52Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
+    },
+    {
+      "time": "2026-09-07T20:47:52Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-2 Real Sociedad (32') - Y. Herrera"
+    },
+    {
+      "time": "2026-09-07T20:47:52Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
+    },
+    {
+      "time": "2026-09-07T20:48:07Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-1 Real Sociedad (11') - J. Ochieng"
+    },
+    {
+      "time": "2026-09-07T20:48:07Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
+    },
+    {
+      "time": "2026-09-07T20:48:07Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-2 Real Sociedad (32') - Y. Herrera"
+    },
+    {
+      "time": "2026-09-07T20:48:07Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
+    },
+    {
+      "time": "2026-09-07T20:48:22Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-1 Real Sociedad (11') - J. Ochieng"
+    },
+    {
+      "time": "2026-09-07T20:48:23Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
+    },
+    {
+      "time": "2026-09-07T20:48:23Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-2 Real Sociedad (32') - Y. Herrera"
+    },
+    {
+      "time": "2026-09-07T20:48:23Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
+    },
+    {
+      "time": "2026-09-07T20:48:38Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-1 Real Sociedad (11') - J. Ochieng"
+    },
+    {
+      "time": "2026-09-07T20:48:38Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
+    },
+    {
+      "time": "2026-09-07T20:48:38Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-2 Real Sociedad (32') - Y. Herrera"
+    },
+    {
+      "time": "2026-09-07T20:48:38Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
+    },
+    {
+      "time": "2026-09-07T20:48:53Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-1 Real Sociedad (11') - J. Ochieng"
+    },
+    {
+      "time": "2026-09-07T20:48:53Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
+    },
+    {
+      "time": "2026-09-07T20:48:53Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-2 Real Sociedad (32') - Y. Herrera"
+    },
+    {
+      "time": "2026-09-07T20:48:54Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
+    },
+    {
+      "time": "2026-09-07T20:49:09Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-1 Real Sociedad (11') - J. Ochieng"
+    },
+    {
+      "time": "2026-09-07T20:49:09Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
+    },
+    {
+      "time": "2026-09-07T20:49:09Z",
+      "level": "goal",
+      "message": "GOL! Elche 0-2 Real Sociedad (32') - Y. Herrera"
+    },
+    {
+      "time": "2026-09-07T20:49:09Z",
+      "level": "error",
+      "message": "X'e paylaşılamadı: Token yenileme başarısız: 401 - {\"error\":\"unauthorized_client\",\"error_description\":\"Missing valid authorization header\"}"
     }
   ]
 }

@@ -40,7 +40,7 @@ WATCHLIST: List[WatchedMatch] = [WatchedMatch(**m) for m in _runtime["watchlist"
 DRY_RUN_CLOUD: bool = _runtime["dry_run"]
 
 # Kaç saniyede bir Maçkolik kontrol edilecek
-POLL_INTERVAL_SECONDS = 15
+POLL_INTERVAL_SECONDS = 8
 
 # Dedup / state veritabanı (SQLite dosyası)
 DB_PATH = "nebulalive.db"

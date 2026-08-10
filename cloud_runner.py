@@ -25,11 +25,14 @@ from event_detector import find_new_goals
 from tweet_templates import build_goal_tweet
 from state_store import init_db, mark_event_published
 
-# 4.5 dakika + checkout/pip/commit ek yükü (~45-60sn) toplamda 5 dakikalık
-# tetikleme aralığını AŞIYORDU - bu da GitHub'ın zamanlanmış (cron)
-# tetiklemelerinin çakışma (concurrency) yüzünden sürekli atlanmasına neden
-# oluyordu. 3 dakikaya indirerek gerçek bir boşluk bırakıyoruz.
-RUN_DURATION_SECONDS = 3 * 60
+# Tetikleme artık GitHub'ın native cron'una değil, cron-job.org'un
+# workflow_dispatch çağrısına dayanıyor ve workflow'da
+# "concurrency: cancel-in-progress: false" var - yani üst üste binen bir
+# tetikleme ATLANMIYOR, sıraya giriyor. Bu yüzden süreyi 5 dakikalık
+# tetikleme aralığına yakın tutup (checkout/pip/commit ek yüküne ~30sn pay
+# bırakarak) çalışmalar arasındaki boş (kontrolsüz) süreyi minimuma
+# indiriyoruz - bir golün fark edilmeden geçtiği pencereyi daraltmak için.
+RUN_DURATION_SECONDS = 270  # 4.5 dakika
 STATUS_PATH = "status.json"
 MAX_LOG_ENTRIES = 80
 

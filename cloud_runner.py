@@ -17,8 +17,11 @@ main.run_once() sadece print() basıyor, yapılandırılmış veri döndürmüyo
 from __future__ import annotations
 
 import json
+import os
 import time
 from datetime import datetime, timezone
+
+import requests
 
 from config import WATCHLIST, POLL_INTERVAL_SECONDS, GOAL_VIDEO_PATH, DRY_RUN_CLOUD
 from event_detector import find_new_goals
@@ -137,6 +140,36 @@ def _write_status(log: list, poll_count: int, run_started_at: str, live_scores: 
         json.dump(status, f, ensure_ascii=False, indent=2)
 
 
+def _trigger_next_run() -> None:
+    """
+    Harici bir cron servisine (cron-job.org) bağımlı kalmak yerine, her
+    çalışma kendi bitişinde GitHub'ın kendiliğinden sağladığı GITHUB_TOKEN
+    ile bir sonraki çalışmayı KENDİSİ tetikler (self-chaining) - böylece
+    üçüncü parti bir servisin çökmesi/durması sürekli izlemeyi kesmez.
+    Native "schedule" cron'u (*/5 dakika) ise sadece bu zincir bir şekilde
+    kırılırsa (ör. bu çalışma beklenmedik şekilde çökerse) devreye giren
+    bir yedek/güvenlik ağı olarak workflow'da kalmaya devam ediyor.
+    """
+    token = os.environ.get("GITHUB_TOKEN")
+    repo = os.environ.get("GITHUB_REPOSITORY")
+    if not token or not repo:
+        print("[UYARI] GITHUB_TOKEN/GITHUB_REPOSITORY yok, self-chaining atlandı.", flush=True)
+        return
+    try:
+        resp = requests.post(
+            f"https://api.github.com/repos/{repo}/actions/workflows/nebulalive.yml/dispatches",
+            headers={"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"},
+            json={"ref": "main"},
+            timeout=15,
+        )
+        if resp.status_code == 204:
+            print("[BİLGİ] Bir sonraki çalışma tetiklendi (self-chaining).", flush=True)
+        else:
+            print(f"[UYARI] Self-chaining tetikleme başarısız: {resp.status_code} - {resp.text[:200]}", flush=True)
+    except requests.exceptions.RequestException as e:
+        print(f"[UYARI] Self-chaining tetikleme hatası: {e}", flush=True)
+
+
 def main() -> None:
     init_db()
     log: list = []
@@ -160,6 +193,7 @@ def main() -> None:
 
     _write_status(log, cycle, run_started_at, live_scores, match_start_times, match_states, live_minutes)
     print(f"[BILGI] cloud_runner tamamlandi ({cycle} kontrol yapildi).", flush=True)
+    _trigger_next_run()
 
 
 if __name__ == "__main__":

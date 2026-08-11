@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: nebulalive-worker
@@ -32,6 +33,7 @@ jobs:
           X_OAUTH2_CLIENT_SECRET: ${{ secrets.X_OAUTH2_CLIENT_SECRET }}
           X_OAUTH2_REFRESH_TOKEN: ${{ secrets.X_OAUTH2_REFRESH_TOKEN }}
           SECRETS_MANAGER_PAT: ${{ secrets.SECRETS_MANAGER_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python cloud_runner.py
 
       - name: Durumu (dedup DB + panel verisi) commit'le

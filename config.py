@@ -50,6 +50,9 @@ DB_PATH = "nebulalive.db"
 # sürümünü kullan - orijinal 4K dosyayı DOĞRUDAN kullanma.
 GOAL_VIDEO_PATH = "assets/NebulaGol_1080p.mp4"
 
+# Maç bittiğinde ("Maç Sonu") paylaşılan sabit görsel.
+MATCH_END_IMAGE_PATH = "assets/NebulaSonDAKİKA.jpeg"
+
 # Maçkolik istek ayarları
 REQUEST_TIMEOUT_SECONDS = 10
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"

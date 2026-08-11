@@ -15,9 +15,9 @@ def build_goal_tweet(event: GoalEvent) -> str:
     scoring_team = event.home if event.scoring_side == "home" else event.away
 
     if event.sub_type == "own-goal":
-        headline = f"⚽ GOL! {event.player_name} kendi kalesine attı, {scoring_team} öne geçti!"
+        headline = f"🚨 GOL! ⚽ {event.player_name} kendi kalesine attı, {scoring_team} öne geçti!"
     else:
-        headline = f"⚽ GOOOOOL! {scoring_team} için {event.player_name}!"
+        headline = f" 🚨GOL! {scoring_team} attı. \n ⚽ {event.player_name}!"
 
     tags = "#NebulaLive"
     if event.hashtags:
@@ -25,8 +25,21 @@ def build_goal_tweet(event: GoalEvent) -> str:
 
     tweet = (
         f"{headline}\n\n"
-        f"{event.minute}' dakika\n"
+        f"{event.minute}' dakika\n\n"
         f"{event.home} {event.score} {event.away}\n\n"
+        f"{tags}"
+    )
+    return tweet
+
+
+def build_match_end_tweet(home: str, away: str, score: str, hashtags: str = "") -> str:
+    tags = "#NebulaLive"
+    if hashtags:
+        tags = f"{tags} {hashtags}"
+
+    tweet = (
+        f"🏁 MAÇ SONU\n\n"
+        f"{home} {score} {away}\n\n"
         f"{tags}"
     )
     return tweet

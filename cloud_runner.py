@@ -23,10 +23,10 @@ from datetime import datetime, timezone
 
 import requests
 
-from config import WATCHLIST, POLL_INTERVAL_SECONDS, GOAL_VIDEO_PATH, DRY_RUN_CLOUD
+from config import WATCHLIST, POLL_INTERVAL_SECONDS, GOAL_VIDEO_PATH, MATCH_END_IMAGE_PATH, DRY_RUN_CLOUD
 from event_detector import find_new_goals
-from tweet_templates import build_goal_tweet
-from state_store import init_db, mark_event_published
+from tweet_templates import build_goal_tweet, build_match_end_tweet
+from state_store import init_db, mark_event_published, is_event_published
 
 # Tetikleme artık GitHub'ın native cron'una değil, cron-job.org'un
 # workflow_dispatch çağrısına dayanıyor ve workflow'da
@@ -89,6 +89,26 @@ def _poll_once(log: list, live_scores: dict, match_start_times: dict, match_stat
             live_minutes[match.match_id] = _compute_minute(start_time)
         if match_state is not None:
             match_states[match.match_id] = match_state
+
+        if match_state == "postGame":
+            fulltime_id = f"{match.match_id}-fulltime"
+            if not is_event_published(fulltime_id):
+                tweet_text = build_match_end_tweet(match.home, match.away, current_score, match.hashtags)
+                _log(log, "goal", f"MAÇ SONU! {match.home} {current_score} {match.away}")
+
+                if DRY_RUN_CLOUD:
+                    mark_event_published(fulltime_id, match.match_id, "FULLTIME", tweet_id=None)
+                    _log(log, "info", "[DRY-RUN] X'e gönderilmedi (test modu)")
+                else:
+                    from x_publisher import publish_match_end_post, XPublisherError
+
+                    try:
+                        access_token = _get_access_token_cached(access_token_cache)
+                        tweet_id = publish_match_end_post(tweet_text, image_path=MATCH_END_IMAGE_PATH, access_token=access_token)
+                        mark_event_published(fulltime_id, match.match_id, "FULLTIME", tweet_id=tweet_id)
+                        _log(log, "success", f"Tweet paylaşıldı: {tweet_id}")
+                    except XPublisherError as e:
+                        _log(log, "error", f"X'e paylaşılamadı: {e}")
 
         if not new_goals:
             _log(log, "info", f"{match.home} - {match.away}: kontrol edildi, değişiklik yok")

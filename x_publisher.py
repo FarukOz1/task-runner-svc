@@ -210,13 +210,43 @@ def _media_upload_wait_processing(access_token: str, media_id: str, max_wait_sec
     raise XPublisherError("Medya işleme zaman aşımına uğradı.")
 
 
-def _upload_video(access_token: str, video_path: str) -> str:
-    total_bytes = os.path.getsize(video_path)
-    media_id = _media_upload_init(access_token, total_bytes, "video/mp4", "tweet_video")
-    _media_upload_append(access_token, media_id, video_path)
+def _upload_media(access_token: str, path: str, media_type: str, media_category: str) -> str:
+    total_bytes = os.path.getsize(path)
+    media_id = _media_upload_init(access_token, total_bytes, media_type, media_category)
+    _media_upload_append(access_token, media_id, path)
     _media_upload_finalize(access_token, media_id)
     _media_upload_wait_processing(access_token, media_id)
     return media_id
+
+
+def _upload_video(access_token: str, video_path: str) -> str:
+    return _upload_media(access_token, video_path, "video/mp4", "tweet_video")
+
+
+def _upload_image(access_token: str, image_path: str) -> str:
+    ext = image_path.rsplit(".", 1)[-1].lower()
+    media_type = "image/png" if ext == "png" else "image/jpeg"
+    return _upload_media(access_token, image_path, media_type, "tweet_image")
+
+
+def _post_tweet(text: str, media_id: Optional[str], access_token: str) -> str:
+    body: dict = {"text": text}
+    if media_id:
+        body["media"] = {"media_ids": [media_id]}
+
+    resp = requests.post(
+        TWEETS_URL,
+        headers={"Authorization": f"Bearer {access_token}", "Content-Type": "application/json"},
+        json=body,
+        timeout=30,
+    )
+    if resp.status_code not in (200, 201):
+        raise XPublisherError(f"Tweet paylaşılamadı: {resp.status_code} - {resp.text[:300]}")
+
+    tweet_id = resp.json().get("data", {}).get("id")
+    if not tweet_id:
+        raise XPublisherError(f"Tweet paylaşıldı ama id alınamadı: {resp.text[:300]}")
+    return str(tweet_id)
 
 
 def publish_goal_post(text: str, video_path: Optional[str] = None, access_token: Optional[str] = None) -> str:
@@ -233,25 +263,18 @@ def publish_goal_post(text: str, video_path: Optional[str] = None, access_token:
     if access_token is None:
         access_token = get_fresh_access_token()
 
-    media_ids = None
-    if video_path:
-        media_id = _upload_video(access_token, video_path)
-        media_ids = [media_id]
+    media_id = _upload_video(access_token, video_path) if video_path else None
+    return _post_tweet(text, media_id, access_token)
 
-    body: dict = {"text": text}
-    if media_ids:
-        body["media"] = {"media_ids": media_ids}
 
-    resp = requests.post(
-        TWEETS_URL,
-        headers={"Authorization": f"Bearer {access_token}", "Content-Type": "application/json"},
-        json=body,
-        timeout=30,
-    )
-    if resp.status_code not in (200, 201):
-        raise XPublisherError(f"Tweet paylaşılamadı: {resp.status_code} - {resp.text[:300]}")
+def publish_match_end_post(text: str, image_path: Optional[str] = None, access_token: Optional[str] = None) -> str:
+    """
+    Maç Sonu tweet'ini (opsiyonel görsel ile) paylaşır. publish_goal_post ile
+    aynı mantık, sadece video yerine statik görsel yüklüyor (daha hızlı işlenir,
+    processing_info beklemesi genelde hiç gerekmez).
+    """
+    if access_token is None:
+        access_token = get_fresh_access_token()
 
-    tweet_id = resp.json().get("data", {}).get("id")
-    if not tweet_id:
-        raise XPublisherError(f"Tweet paylaşıldı ama id alınamadı: {resp.text[:300]}")
-    return str(tweet_id)
+    media_id = _upload_image(access_token, image_path) if image_path else None
+    return _post_tweet(text, media_id, access_token)

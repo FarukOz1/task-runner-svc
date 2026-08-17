@@ -1,12 +1,4 @@
 {
   "dry_run": false,
-  "watchlist": [
-    {
-      "match_id": "7a2nfmhdemats7gw8rjcxitck",
-      "home": "Elche",
-      "away": "Real Sociedad",
-      "active": true,
-      "hashtags": ""
-    }
-  ]
+  "watchlist": []
 }

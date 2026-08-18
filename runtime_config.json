@@ -1,4 +1,12 @@
 {
   "dry_run": false,
-  "watchlist": []
+  "watchlist": [
+    {
+      "match_id": "58675sqlr3a9h0ce3oliqeuxg",
+      "home": "Real Madrid",
+      "away": "Inter",
+      "active": true,
+      "hashtags": "#RMAINT #UCL"
+    }
+  ]
 }

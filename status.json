@@ -1,422 +1,187 @@
 {
-  "last_updated": "2026-09-07T22:08:37Z",
-  "run_started_at": "2026-09-07T22:04:01Z",
+  "last_updated": "2026-09-07T22:13:23Z",
+  "run_started_at": "2026-09-07T22:08:52Z",
   "poll_interval_seconds": 8,
-  "poll_count": 31,
+  "poll_count": 33,
   "dry_run": false,
   "watchlist": [
     {
-      "match_id": "7a2nfmhdemats7gw8rjcxitck",
-      "home": "Elche",
-      "away": "Real Sociedad",
+      "match_id": "58675sqlr3a9h0ce3oliqeuxg",
+      "home": "Real Madrid",
+      "away": "Inter",
       "active": true,
-      "hashtags": "",
-      "score": "2-3",
-      "match_start_time": 1788809400000,
-      "match_state": "postGame",
-      "minute": 158
+      "hashtags": "#RMAINT #UCL",
+      "score": "0-0",
+      "match_start_time": 1788894000000,
+      "match_state": "preGame",
+      "minute": 0
     }
   ],
   "recent_log": [
     {
-      "time": "2026-09-07T22:04:39Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:04:39Z",
+      "time": "2026-09-07T22:08:53Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:04:47Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:04:47Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:04:47Z",
+      "time": "2026-09-07T22:09:01Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:04:56Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:04:56Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:04:56Z",
+      "time": "2026-09-07T22:09:10Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:05:04Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:05:05Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:05:05Z",
+      "time": "2026-09-07T22:09:18Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:05:13Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:05:14Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:05:14Z",
+      "time": "2026-09-07T22:09:26Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:05:22Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:05:23Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:05:23Z",
+      "time": "2026-09-07T22:09:34Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:05:31Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:05:31Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:05:31Z",
+      "time": "2026-09-07T22:09:42Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:05:39Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:05:40Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:05:40Z",
+      "time": "2026-09-07T22:09:51Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:05:48Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:05:49Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:05:49Z",
+      "time": "2026-09-07T22:09:59Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:05:57Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:05:58Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:05:58Z",
+      "time": "2026-09-07T22:10:07Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:06:06Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:06:07Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:06:07Z",
+      "time": "2026-09-07T22:10:15Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:06:15Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:06:16Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:06:16Z",
+      "time": "2026-09-07T22:10:24Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:06:24Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:06:24Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:06:24Z",
+      "time": "2026-09-07T22:10:32Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:06:33Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:06:33Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:06:33Z",
+      "time": "2026-09-07T22:10:40Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:06:41Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:06:42Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:06:42Z",
+      "time": "2026-09-07T22:10:48Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:06:50Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:06:51Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:06:51Z",
+      "time": "2026-09-07T22:10:56Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:06:59Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:07:00Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:07:00Z",
+      "time": "2026-09-07T22:11:04Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:07:08Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:07:09Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:07:09Z",
+      "time": "2026-09-07T22:11:13Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:07:17Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:07:18Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:07:18Z",
+      "time": "2026-09-07T22:11:21Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:07:26Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:07:27Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:07:27Z",
+      "time": "2026-09-07T22:11:29Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:07:35Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:07:36Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:07:36Z",
+      "time": "2026-09-07T22:11:37Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:07:44Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:07:44Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:07:44Z",
+      "time": "2026-09-07T22:11:45Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:07:53Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:07:53Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:07:53Z",
+      "time": "2026-09-07T22:11:54Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:08:01Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:08:02Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:08:02Z",
+      "time": "2026-09-07T22:12:02Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:08:10Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:08:11Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:08:11Z",
+      "time": "2026-09-07T22:12:10Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:08:19Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:08:20Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:08:20Z",
+      "time": "2026-09-07T22:12:18Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:08:28Z",
-      "level": "goal",
-      "message": "MAÇ SONU! Elche 2-3 Real Sociedad"
-    },
-    {
-      "time": "2026-09-07T22:08:29Z",
-      "level": "error",
-      "message": "X'e paylaşılamadı: Medya durum kontrolü başarısız: 400 - {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"BadRequest: Not found\"}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}"
-    },
-    {
-      "time": "2026-09-07T22:08:29Z",
+      "time": "2026-09-07T22:12:26Z",
       "level": "info",
-      "message": "Elche - Real Sociedad: kontrol edildi, değişiklik yok"
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:12:34Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:12:42Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:12:50Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:12:59Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:13:07Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:13:15Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     }
   ]
 }

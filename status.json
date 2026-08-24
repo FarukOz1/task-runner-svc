@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-09-07T22:13:23Z",
-  "run_started_at": "2026-09-07T22:08:52Z",
+  "last_updated": "2026-09-07T22:18:30Z",
+  "run_started_at": "2026-09-07T22:13:58Z",
   "poll_interval_seconds": 8,
-  "poll_count": 33,
+  "poll_count": 32,
   "dry_run": false,
   "watchlist": [
     {
@@ -10,7 +10,29 @@
       "home": "Real Madrid",
       "away": "Inter",
       "active": true,
-      "hashtags": "#RMAINT #UCL",
+      "hashtags": "#RMAINT #UCL #RealMadrid #Inter",
+      "score": "0-0",
+      "match_start_time": 1788894000000,
+      "match_state": "preGame",
+      "minute": 0
+    },
+    {
+      "match_id": "57bwm5cxrv0o6gr4zd7llpvro",
+      "home": "Aek",
+      "away": "Lask Linz",
+      "active": true,
+      "hashtags": "#AEKLASK #UCL",
+      "score": "0-0",
+      "match_start_time": 1788885900000,
+      "match_state": "preGame",
+      "minute": 0
+    },
+    {
+      "match_id": "59c02frowfa560lr2veaeutck",
+      "home": "Porto",
+      "away": "Manchester City",
+      "active": true,
+      "hashtags": "#PORMCI #UCL #ManCity #Porto",
       "score": "0-0",
       "match_start_time": 1788894000000,
       "match_state": "preGame",
@@ -19,169 +41,404 @@
   ],
   "recent_log": [
     {
-      "time": "2026-09-07T22:08:53Z",
+      "time": "2026-09-07T22:14:42Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:14:42Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:14:50Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:09:01Z",
+      "time": "2026-09-07T22:14:50Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:14:51Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:14:59Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:09:10Z",
+      "time": "2026-09-07T22:14:59Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:14:59Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:15:07Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:09:18Z",
+      "time": "2026-09-07T22:15:07Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:15:07Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:15:16Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:09:26Z",
+      "time": "2026-09-07T22:15:16Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:15:16Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:15:24Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:09:34Z",
+      "time": "2026-09-07T22:15:24Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:15:24Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:15:33Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:09:42Z",
+      "time": "2026-09-07T22:15:33Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:15:33Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:15:41Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:09:51Z",
+      "time": "2026-09-07T22:15:41Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:15:42Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:15:50Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:09:59Z",
+      "time": "2026-09-07T22:15:50Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:15:50Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:15:58Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:10:07Z",
+      "time": "2026-09-07T22:15:58Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:15:59Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:16:07Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:10:15Z",
+      "time": "2026-09-07T22:16:07Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:16:07Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:16:15Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:10:24Z",
+      "time": "2026-09-07T22:16:15Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:16:15Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:16:23Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:10:32Z",
+      "time": "2026-09-07T22:16:24Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:16:24Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:16:32Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:10:40Z",
+      "time": "2026-09-07T22:16:33Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:16:33Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:16:41Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:10:48Z",
+      "time": "2026-09-07T22:16:41Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:16:41Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:16:49Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:10:56Z",
+      "time": "2026-09-07T22:16:49Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:16:49Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:16:58Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:11:04Z",
+      "time": "2026-09-07T22:16:58Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:16:58Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:17:06Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:11:13Z",
+      "time": "2026-09-07T22:17:06Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:17:07Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:17:15Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:11:21Z",
+      "time": "2026-09-07T22:17:15Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:17:15Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:17:23Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:11:29Z",
+      "time": "2026-09-07T22:17:23Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:17:23Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:17:31Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:11:37Z",
+      "time": "2026-09-07T22:17:31Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:17:31Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:17:39Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:11:45Z",
+      "time": "2026-09-07T22:17:39Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:17:40Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:17:48Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:11:54Z",
+      "time": "2026-09-07T22:17:48Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:17:48Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:17:57Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:12:02Z",
+      "time": "2026-09-07T22:17:57Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:17:57Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:18:05Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:12:10Z",
+      "time": "2026-09-07T22:18:05Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:18:05Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:18:13Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:12:18Z",
+      "time": "2026-09-07T22:18:13Z",
+      "level": "info",
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:18:13Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-07T22:18:22Z",
       "level": "info",
       "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:12:26Z",
+      "time": "2026-09-07T22:18:22Z",
       "level": "info",
-      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-07T22:12:34Z",
+      "time": "2026-09-07T22:18:22Z",
       "level": "info",
-      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T22:12:42Z",
-      "level": "info",
-      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T22:12:50Z",
-      "level": "info",
-      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T22:12:59Z",
-      "level": "info",
-      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T22:13:07Z",
-      "level": "info",
-      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-07T22:13:15Z",
-      "level": "info",
-      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
     }
   ]
 }

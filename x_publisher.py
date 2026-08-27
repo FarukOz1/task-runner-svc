@@ -215,7 +215,11 @@ def _upload_media(access_token: str, path: str, media_type: str, media_category:
     media_id = _media_upload_init(access_token, total_bytes, media_type, media_category)
     _media_upload_append(access_token, media_id, path)
     _media_upload_finalize(access_token, media_id)
-    _media_upload_wait_processing(access_token, media_id)
+    if media_type.startswith("video/"):
+        # STATUS (processing_info) sorgusu sadece video için var - X bunu
+        # resimlerde desteklemiyor (400 "Not found" döner). Resimler zaten
+        # FINALIZE ile hemen kullanıma hazır, ek bekleme gerekmiyor.
+        _media_upload_wait_processing(access_token, media_id)
     return media_id
 
 

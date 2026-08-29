@@ -4,29 +4,29 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>NebulaLive — Canlı Panel</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%237c3aed'/%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23d4af37'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --bg-0: #030309;
-    --bg-1: #0b0818;
-    --panel: rgba(21, 15, 38, 0.55);
-    --panel-2: rgba(28, 19, 48, 0.55);
-    --panel-solid: #130e22;
-    --border: rgba(148, 122, 224, 0.16);
-    --border-strong: rgba(167, 139, 250, 0.4);
-    --text-0: #f5f1ff;
-    --text-1: #ac9fd6;
-    --text-2: #6f6491;
-    --accent: #a78bfa;
-    --accent-soft: #c4b5fd;
-    --accent-2: #22d3ee;
+    --bg-0: #060502;
+    --bg-1: #0d0a04;
+    --panel: rgba(26, 20, 8, 0.55);
+    --panel-2: rgba(32, 25, 10, 0.55);
+    --panel-solid: #15110a;
+    --border: rgba(212, 175, 55, 0.18);
+    --border-strong: rgba(212, 175, 55, 0.45);
+    --text-0: #f7ecd1;
+    --text-1: #c9b689;
+    --text-2: #7d6f47;
+    --accent: #d4af37;
+    --accent-soft: #f2d374;
+    --accent-2: #b8860b;
     --live: #34d399;
     --warn: #fbbf24;
-    --err: #fb7185;
-    --goal: #f472b6;
+    --err: #ef4444;
+    --goal: #ff8c1a;
     --radius: 18px;
   }
 
@@ -57,9 +57,9 @@
 
   .fx.aurora {
     background:
-      radial-gradient(ellipse 780px 520px at var(--ax1, 18%) var(--ay1, -6%), rgba(139, 92, 246, 0.45), transparent 60%),
-      radial-gradient(ellipse 620px 480px at var(--ax2, 96%) var(--ay2, 8%), rgba(34, 211, 238, 0.24), transparent 58%),
-      radial-gradient(ellipse 700px 560px at var(--ax3, 46%) var(--ay3, 112%), rgba(244, 114, 182, 0.16), transparent 60%),
+      radial-gradient(ellipse 780px 520px at var(--ax1, 18%) var(--ay1, -6%), rgba(212, 175, 55, 0.32), transparent 60%),
+      radial-gradient(ellipse 620px 480px at var(--ax2, 96%) var(--ay2, 8%), rgba(184, 134, 11, 0.22), transparent 58%),
+      radial-gradient(ellipse 700px 560px at var(--ax3, 46%) var(--ay3, 112%), rgba(255, 140, 26, 0.14), transparent 60%),
       var(--bg-0);
     animation: auroraDrift 26s ease-in-out infinite;
   }
@@ -134,7 +134,7 @@
     height: 38px;
     border-radius: 50%;
     flex-shrink: 0;
-    background: conic-gradient(from 0deg, #d8b4fe, var(--accent-2), var(--goal), #d8b4fe);
+    background: conic-gradient(from 0deg, #fff5d1, var(--accent), var(--accent-2), #fff5d1);
     animation: spin 7s linear infinite;
     box-shadow: 0 0 0 1px rgba(255,255,255,0.06) inset;
   }
@@ -143,8 +143,8 @@
     position: absolute;
     inset: 3px;
     border-radius: 50%;
-    background: radial-gradient(circle at 35% 30%, #efe4ff, var(--accent) 45%, #3b1478 100%);
-    box-shadow: 0 0 22px rgba(167,139,250,0.75);
+    background: radial-gradient(circle at 35% 30%, #fff3cf, var(--accent) 45%, #4a3607 100%);
+    box-shadow: 0 0 22px rgba(212,175,55,0.75);
   }
   @keyframes spin { to { transform: rotate(360deg); } }
 
@@ -153,7 +153,7 @@
     font-weight: 700;
     letter-spacing: 0.3px;
     margin: 0;
-    background: linear-gradient(90deg, #fff 10%, var(--accent-soft) 55%, var(--accent-2) 100%);
+    background: linear-gradient(90deg, #fff8e7 10%, var(--accent-soft) 55%, var(--accent-2) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;

@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>NebulaLive — Canlı Panel</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23d4af37'/%3E%3C/svg%3E" />
+<link rel="icon" type="image/jpeg" href="assets/logo.jpeg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -129,24 +129,17 @@
   }
 
   .brand .orb {
-    position: relative;
-    width: 38px;
-    height: 38px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
+    object-fit: cover;
     flex-shrink: 0;
-    background: conic-gradient(from 0deg, #fff5d1, var(--accent), var(--accent-2), #fff5d1);
-    animation: spin 7s linear infinite;
-    box-shadow: 0 0 0 1px rgba(255,255,255,0.06) inset;
+    animation: orbGlow 3s ease-in-out infinite;
   }
-  .brand .orb::after {
-    content: '';
-    position: absolute;
-    inset: 3px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 35% 30%, #fff3cf, var(--accent) 45%, #4a3607 100%);
-    box-shadow: 0 0 22px rgba(212,175,55,0.75);
+  @keyframes orbGlow {
+    0%, 100% { box-shadow: 0 0 12px rgba(212,175,55,0.4), 0 0 0 1px rgba(212,175,55,0.2); }
+    50% { box-shadow: 0 0 24px rgba(212,175,55,0.8), 0 0 0 1px rgba(212,175,55,0.4); }
   }
-  @keyframes spin { to { transform: rotate(360deg); } }
 
   .brand h1 {
     font-size: 21px;
@@ -667,7 +660,7 @@
   <div class="wrap">
     <header class="top">
       <div class="brand">
-        <div class="orb"></div>
+        <img class="orb" src="assets/logo.jpeg" alt="NebulaLive" />
         <div>
           <h1>NebulaLive</h1>
           <span class="sub">Gol Otomasyonu — Kontrol Paneli</span>

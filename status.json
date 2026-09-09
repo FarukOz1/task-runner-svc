@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-09-08T17:48:06Z",
-  "run_started_at": "2026-09-08T17:43:32Z",
+  "last_updated": "2026-09-09T07:44:47Z",
+  "run_started_at": "2026-09-09T07:40:14Z",
   "poll_interval_seconds": 8,
-  "poll_count": 33,
+  "poll_count": 32,
   "dry_run": false,
   "watchlist": [
     {
       "match_id": "58675sqlr3a9h0ce3oliqeuxg",
       "home": "Real Madrid",
       "away": "Inter",
-      "active": false,
+      "active": true,
       "hashtags": "#RMAINT #UCL #RealMadrid #Inter",
-      "score": null,
-      "match_start_time": null,
-      "match_state": null,
-      "minute": null
+      "score": "2-1",
+      "match_start_time": 1788894000000,
+      "match_state": "postGame",
+      "minute": 764
     },
     {
       "match_id": "57bwm5cxrv0o6gr4zd7llpvro",
@@ -24,19 +24,19 @@
       "hashtags": "#AEKLASK #UCL",
       "score": "1-0",
       "match_start_time": 1788885900000,
-      "match_state": "liveGame",
-      "minute": 62
+      "match_state": "postGame",
+      "minute": 899
     },
     {
       "match_id": "59c02frowfa560lr2veaeutck",
       "home": "Porto",
       "away": "Manchester City",
-      "active": false,
+      "active": true,
       "hashtags": "#PORMCI #UCL #ManCity #Porto",
-      "score": null,
-      "match_start_time": null,
-      "match_state": null,
-      "minute": null
+      "score": "0-2",
+      "match_start_time": 1788894000000,
+      "match_state": "postGame",
+      "minute": 764
     },
     {
       "match_id": "57se0h5lnw0ghlv5c4y6ky13o",
@@ -44,340 +44,410 @@
       "away": "Aston Villa",
       "active": true,
       "hashtags": "#UCL #BRUAVL",
-      "score": "1-3",
+      "score": "2-3",
       "match_start_time": 1788885900000,
-      "match_state": "liveGame",
-      "minute": 62
+      "match_state": "postGame",
+      "minute": 899
     }
   ],
   "recent_log": [
     {
-      "time": "2026-09-08T17:43:32Z",
+      "time": "2026-09-09T07:41:58Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:41:58Z",
       "level": "info",
       "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:43:32Z",
+      "time": "2026-09-09T07:41:58Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:41:58Z",
       "level": "info",
       "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:43:41Z",
+      "time": "2026-09-09T07:42:07Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:42:07Z",
       "level": "info",
       "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:43:41Z",
+      "time": "2026-09-09T07:42:07Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:42:07Z",
       "level": "info",
       "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:43:49Z",
+      "time": "2026-09-09T07:42:15Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:42:15Z",
       "level": "info",
       "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:43:49Z",
+      "time": "2026-09-09T07:42:15Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:42:15Z",
       "level": "info",
       "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:43:57Z",
+      "time": "2026-09-09T07:42:24Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:42:24Z",
       "level": "info",
       "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:43:58Z",
+      "time": "2026-09-09T07:42:24Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:42:24Z",
       "level": "info",
       "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:44:06Z",
+      "time": "2026-09-09T07:42:32Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:42:32Z",
       "level": "info",
       "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:44:06Z",
+      "time": "2026-09-09T07:42:32Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:42:32Z",
       "level": "info",
       "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:44:14Z",
+      "time": "2026-09-09T07:42:40Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:42:40Z",
       "level": "info",
       "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:44:14Z",
+      "time": "2026-09-09T07:42:40Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:42:40Z",
       "level": "info",
       "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:44:22Z",
+      "time": "2026-09-09T07:42:48Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:42:49Z",
       "level": "info",
       "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:44:23Z",
+      "time": "2026-09-09T07:42:49Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:42:49Z",
       "level": "info",
       "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:44:31Z",
+      "time": "2026-09-09T07:42:57Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:42:58Z",
       "level": "info",
       "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:44:31Z",
+      "time": "2026-09-09T07:42:58Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:42:58Z",
       "level": "info",
       "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:44:39Z",
+      "time": "2026-09-09T07:43:06Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:43:06Z",
       "level": "info",
       "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:44:39Z",
+      "time": "2026-09-09T07:43:06Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:43:06Z",
       "level": "info",
       "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:44:47Z",
+      "time": "2026-09-09T07:43:14Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:43:15Z",
       "level": "info",
       "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:44:47Z",
+      "time": "2026-09-09T07:43:15Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:43:15Z",
       "level": "info",
       "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:44:56Z",
+      "time": "2026-09-09T07:43:23Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:43:23Z",
       "level": "info",
       "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:44:56Z",
+      "time": "2026-09-09T07:43:23Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:43:23Z",
       "level": "info",
       "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:45:04Z",
+      "time": "2026-09-09T07:43:31Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:43:31Z",
       "level": "info",
       "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:45:04Z",
+      "time": "2026-09-09T07:43:31Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:43:32Z",
       "level": "info",
       "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:45:12Z",
+      "time": "2026-09-09T07:43:40Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:43:40Z",
       "level": "info",
       "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:45:13Z",
+      "time": "2026-09-09T07:43:40Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:43:40Z",
       "level": "info",
       "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:45:21Z",
+      "time": "2026-09-09T07:43:48Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:43:48Z",
       "level": "info",
       "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:45:21Z",
+      "time": "2026-09-09T07:43:48Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:43:48Z",
       "level": "info",
       "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:45:29Z",
+      "time": "2026-09-09T07:43:56Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:43:56Z",
       "level": "info",
       "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:45:29Z",
+      "time": "2026-09-09T07:43:56Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:43:56Z",
       "level": "info",
       "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:45:38Z",
+      "time": "2026-09-09T07:44:04Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:44:05Z",
       "level": "info",
       "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:45:38Z",
+      "time": "2026-09-09T07:44:05Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:44:05Z",
       "level": "info",
       "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:45:46Z",
+      "time": "2026-09-09T07:44:13Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:44:14Z",
       "level": "info",
       "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:45:46Z",
+      "time": "2026-09-09T07:44:14Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:44:14Z",
       "level": "info",
       "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:45:54Z",
+      "time": "2026-09-09T07:44:22Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:44:22Z",
       "level": "info",
       "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:45:55Z",
+      "time": "2026-09-09T07:44:22Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:44:23Z",
       "level": "info",
       "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:46:03Z",
+      "time": "2026-09-09T07:44:31Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:44:31Z",
       "level": "info",
       "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:46:03Z",
+      "time": "2026-09-09T07:44:31Z",
+      "level": "info",
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:44:31Z",
       "level": "info",
       "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:46:11Z",
+      "time": "2026-09-09T07:44:39Z",
+      "level": "info",
+      "message": "Real Madrid - Inter: kontrol edildi, değişiklik yok"
+    },
+    {
+      "time": "2026-09-09T07:44:39Z",
       "level": "info",
       "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:46:11Z",
+      "time": "2026-09-09T07:44:39Z",
       "level": "info",
-      "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
+      "message": "Porto - Manchester City: kontrol edildi, değişiklik yok"
     },
     {
-      "time": "2026-09-08T17:46:19Z",
-      "level": "info",
-      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:46:19Z",
-      "level": "info",
-      "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:46:28Z",
-      "level": "info",
-      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:46:28Z",
-      "level": "info",
-      "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:46:36Z",
-      "level": "info",
-      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:46:36Z",
-      "level": "info",
-      "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:46:44Z",
-      "level": "info",
-      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:46:44Z",
-      "level": "info",
-      "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:46:52Z",
-      "level": "info",
-      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:46:53Z",
-      "level": "info",
-      "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:47:01Z",
-      "level": "info",
-      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:47:01Z",
-      "level": "info",
-      "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:47:09Z",
-      "level": "info",
-      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:47:09Z",
-      "level": "info",
-      "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:47:17Z",
-      "level": "info",
-      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:47:17Z",
-      "level": "info",
-      "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:47:25Z",
-      "level": "info",
-      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:47:25Z",
-      "level": "info",
-      "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:47:34Z",
-      "level": "info",
-      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:47:34Z",
-      "level": "info",
-      "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:47:42Z",
-      "level": "info",
-      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:47:42Z",
-      "level": "info",
-      "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:47:50Z",
-      "level": "info",
-      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:47:50Z",
-      "level": "info",
-      "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:47:58Z",
-      "level": "info",
-      "message": "Aek - Lask Linz: kontrol edildi, değişiklik yok"
-    },
-    {
-      "time": "2026-09-08T17:47:58Z",
+      "time": "2026-09-09T07:44:39Z",
       "level": "info",
       "message": "Club Brugge - Aston Villa: kontrol edildi, değişiklik yok"
     }

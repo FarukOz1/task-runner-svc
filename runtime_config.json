@@ -1,12 +1,4 @@
 {
   "dry_run": false,
-  "watchlist": [
-    {
-      "match_id": "59c02frowfa560lr2veaeutck",
-      "home": "Porto",
-      "away": "Manchester City",
-      "active": true,
-      "hashtags": "#PORMCI #UCL #ManCity #Porto"
-    }
-  ]
+  "watchlist": []
 }

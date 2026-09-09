@@ -2,13 +2,6 @@
   "dry_run": false,
   "watchlist": [
     {
-      "match_id": "58675sqlr3a9h0ce3oliqeuxg",
-      "home": "Real Madrid",
-      "away": "Inter",
-      "active": true,
-      "hashtags": "#RMAINT #UCL #RealMadrid #Inter"
-    },
-    {
       "match_id": "59c02frowfa560lr2veaeutck",
       "home": "Porto",
       "away": "Manchester City",
